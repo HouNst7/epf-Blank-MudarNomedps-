@@ -18,5 +18,7 @@
         <input type="submit" value="Cadastrar">
     </form>
     <a href="/login">Ir para Login</a>
+    <br>
+    <a href="/">Voltar para Home</a>
 </body>
 </html>

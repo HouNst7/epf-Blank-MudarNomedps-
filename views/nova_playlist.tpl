@@ -10,8 +10,11 @@
     % end
     <form method="post">
         Nome da Playlist: <input name="nome"><br>
+        Pública? <input type="checkbox" name="publica" checked> (Se desmarcado, só você verá)<br>
         <input type="submit" value="Criar">
     </form>
     <a href="/playlists">Voltar para Playlists</a>
+    <br>
+    <a href="/">Voltar para Home</a>
 </body>
 </html>

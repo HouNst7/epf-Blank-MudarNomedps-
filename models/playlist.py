@@ -1,24 +1,25 @@
 class Playlist:
-    def __init__(self, id, nome, usuario_id, musicas=None):
+    def __init__(self, id, nome, usuario_id, itens=None, publica=True):
         self.id = id
         self.nome = nome
         self.usuario_id = usuario_id  # id do usuário dono da playlist
-        self.musicas = musicas or []  # lista de ids de músicas
+        self.itens = itens or []  # lista de dicts: {'tipo': 'musica'/'podcast', 'id': id}
+        self.publica = publica
 
-    def adicionar_musica(self, musica_id):
-        if musica_id not in self.musicas:
-            self.musicas.append(musica_id)
+    def adicionar_item(self, tipo, item_id):
+        if not any(i['tipo'] == tipo and i['id'] == item_id for i in self.itens):
+            self.itens.append({'tipo': tipo, 'id': item_id})
 
-    def remover_musica(self, musica_id):
-        if musica_id in self.musicas:
-            self.musicas.remove(musica_id)
+    def remover_item(self, tipo, item_id):
+        self.itens = [i for i in self.itens if not (i['tipo'] == tipo and i['id'] == item_id)]
 
     def to_dict(self):
         return {
             'id': self.id,
             'nome': self.nome,
             'usuario_id': self.usuario_id,
-            'musicas': self.musicas
+            'itens': self.itens,
+            'publica': self.publica
         }
 
     @staticmethod
@@ -27,5 +28,6 @@ class Playlist:
             id=data['id'],
             nome=data['nome'],
             usuario_id=data['usuario_id'],
-            musicas=data.get('musicas', [])
+            itens=data.get('itens', []),
+            publica=data.get('publica', True)
         )

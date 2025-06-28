@@ -5,7 +5,9 @@
         "usuario_id": 1,
         "musicas": [
             2,
-            3
-        ]
+            3,
+            5
+        ],
+        "publica": true
     }
 ]

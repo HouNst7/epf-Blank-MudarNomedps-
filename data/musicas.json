@@ -18,5 +18,15 @@
     {"id": 17, "titulo": "Shallow", "artista": "Lady Gaga, Bradley Cooper", "album": "A Star Is Born Soundtrack", "duracao": "3:36"},
     {"id": 18, "titulo": "Circles", "artista": "Post Malone", "album": "Hollywood's Bleeding", "duracao": "3:35"},
     {"id": 19, "titulo": "Peaches", "artista": "Justin Bieber, Daniel Caesar, Giveon", "album": "Justice", "duracao": "3:18"},
-    {"id": 20, "titulo": "MONTERO (Call Me By Your Name)", "artista": "Lil Nas X", "album": "MONTERO", "duracao": "2:17"}
+    {"id": 20, "titulo": "MONTERO (Call Me By Your Name)", "artista": "Lil Nas X", "album": "MONTERO", "duracao": "2:17"},
+    {"id": 21, "titulo": "As It Was", "artista": "Harry Styles", "album": "Harry's House", "duracao": "2:47"},
+    {"id": 22, "titulo": "Save Your Tears", "artista": "The Weeknd", "album": "After Hours", "duracao": "3:35"},
+    {"id": 23, "titulo": "Stay", "artista": "The Kid LAROI, Justin Bieber", "album": "F*CK LOVE 3: OVER YOU", "duracao": "2:21"},
+    {"id": 24, "titulo": "Anti-Hero", "artista": "Taylor Swift", "album": "Midnights", "duracao": "3:20"},
+    {"id": 25, "titulo": "Flowers", "artista": "Miley Cyrus", "album": "Endless Summer Vacation", "duracao": "3:20"},
+    {"id": 26, "titulo": "Industry Baby", "artista": "Lil Nas X, Jack Harlow", "album": "MONTERO", "duracao": "3:32"},
+    {"id": 27, "titulo": "Easy On Me", "artista": "Adele", "album": "30", "duracao": "3:45"},
+    {"id": 28, "titulo": "Ghost", "artista": "Justin Bieber", "album": "Justice", "duracao": "2:33"},
+    {"id": 29, "titulo": "Unholy", "artista": "Sam Smith, Kim Petras", "album": "Gloria", "duracao": "2:36"},
+    {"id": 30, "titulo": "Heat Waves", "artista": "Glass Animals", "album": "Dreamland", "duracao": "3:58"}
 ]

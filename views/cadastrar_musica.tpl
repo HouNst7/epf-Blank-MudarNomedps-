@@ -14,5 +14,7 @@
         <input type="submit" value="Cadastrar">
     </form>
     <a href="/musicas">Voltar ao catálogo</a>
+    <br>
+    <a href="/">Voltar para Home</a>
 </body>
 </html>

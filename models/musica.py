@@ -1,19 +1,18 @@
-class Musica:
+from .midia import Midia
+
+class Musica(Midia):
     def __init__(self, id, titulo, artista, album, duracao):
-        self.id = id
-        self.titulo = titulo
+        super().__init__(id, titulo, duracao)
         self.artista = artista
         self.album = album
-        self.duracao = duracao  # Exemplo: '3:45'
 
     def to_dict(self):
-        return {
-            'id': self.id,
-            'titulo': self.titulo,
+        d = super().to_dict()
+        d.update({
             'artista': self.artista,
-            'album': self.album,
-            'duracao': self.duracao
-        }
+            'album': self.album
+        })
+        return d
 
     @staticmethod
     def from_dict(data):
