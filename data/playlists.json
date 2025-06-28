@@ -3,6 +3,9 @@
         "id": 1,
         "nome": "vivi",
         "usuario_id": 1,
-        "musicas": []
+        "musicas": [
+            2,
+            3
+        ]
     }
 ]

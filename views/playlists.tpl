@@ -18,6 +18,9 @@
         <p>Você ainda não tem playlists.</p>
     % end
     <a href="/playlists/nova">Criar nova playlist</a>
+    % if usuario and usuario['tipo'] == 'admin':
+        | <a href="/musicas/cadastrar">Cadastrar Música</a>
+    % end
     <br><a href="/">Voltar para Home</a>
 </body>
 </html>

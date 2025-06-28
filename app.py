@@ -6,6 +6,7 @@ from models.playlist import Playlist
 from services.usuarios_service import load_users
 from services.musicas_service import load_musicas, add_musica, get_musica_by_id
 from models.musica import Musica
+from controllers.musicas_controller import *
 
 # Explicitly set the template path
 TEMPLATE_PATH.insert(0, os.path.join(os.path.dirname(__file__), 'views'))
@@ -104,26 +105,9 @@ def criar_playlist():
 
 @route('/musicas')
 def listar_musicas():
+    from services.musicas_service import load_musicas
     musicas = load_musicas()
     return template('musicas', musicas=musicas)
-
-@route('/musicas/nova', method=['GET', 'POST'])
-def nova_musica():
-    erro = None
-    if request.method == 'POST':
-        titulo = request.forms.get('titulo')
-        artista = request.forms.get('artista')
-        album = request.forms.get('album')
-        duracao = request.forms.get('duracao')
-        if not (titulo and artista and album and duracao):
-            erro = 'Preencha todos os campos.'
-        else:
-            musicas = load_musicas()
-            novo_id = max([m.id for m in musicas] or [0]) + 1
-            musica = Musica(id=novo_id, titulo=titulo, artista=artista, album=album, duracao=duracao)
-            add_musica(musica)
-            return redirect('/musicas')
-    return template('nova_musica', erro=erro)
 
 @route('/playlists/<playlist_id:int>/adicionar', method=['GET', 'POST'])
 def adicionar_musica_playlist(playlist_id):

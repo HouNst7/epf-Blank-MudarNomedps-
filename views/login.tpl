@@ -12,5 +12,7 @@
         <input type="submit" value="Entrar">
     </form>
     <a href="/cadastro">Cadastrar</a>
+    <br>
+    <a href="/">Voltar para Home</a>
 </body>
 </html>

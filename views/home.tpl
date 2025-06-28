@@ -8,13 +8,15 @@
     % if usuario:
         <span>Olá, {{usuario['nome']}}!</span> |
         <a href="/playlists">Minhas Playlists</a> |
-        <a href="/musicas">Músicas</a> |
-        <a href="/logout">Sair</a>
+        <a href="/musicas">Músicas</a>
+        % if usuario['tipo'] == 'admin':
+            | <a href="/musicas/cadastrar">Cadastrar Música</a>
+        % end
+        | <a href="/logout">Sair</a>
     % else:
         <a href="/login">Login</a> |
         <a href="/cadastro">Cadastro</a>
     % end
-    <!-- Futuramente: <a href="/musicas">Músicas</a> -->
 </body>
 </html>
 

@@ -4,21 +4,24 @@ from services.usuarios_service import carregar_usuarios, salvar_usuarios, encont
 
 @route('/cadastro', method=['GET', 'POST'])
 def cadastro():
+    erro = None
     if request.method == 'POST':
         nome = request.forms.get('nome')
         email = request.forms.get('email')
         senha = request.forms.get('senha')
+        tipo = request.forms.get('tipo') or 'regular'
 
         if encontrar_por_email(email):
-            return "Usuário já existe!"
+            erro = "Usuário já existe!"
+            return template('cadastro', erro=erro)
 
         usuarios = carregar_usuarios()
-        novo = Usuario(id=len(usuarios)+1, nome=nome, email=email, senha=senha)
+        novo = Usuario(id=len(usuarios)+1, nome=nome, email=email, senha=senha, tipo=tipo)
         usuarios.append(novo)
         salvar_usuarios(usuarios)
         return redirect('/login')
 
-    return template('cadastro')
+    return template('cadastro', erro=erro)
 
 @route('/login', method=['GET', 'POST'])
 def login():

@@ -1,0 +1,22 @@
+[
+    {"id": 1, "titulo": "Blinding Lights", "artista": "The Weeknd", "album": "After Hours", "duracao": "3:20"},
+    {"id": 2, "titulo": "Shape of You", "artista": "Ed Sheeran", "album": "÷ (Divide)", "duracao": "3:53"},
+    {"id": 3, "titulo": "Dance Monkey", "artista": "Tones and I", "album": "The Kids Are Coming", "duracao": "3:29"},
+    {"id": 4, "titulo": "Someone You Loved", "artista": "Lewis Capaldi", "album": "Divinely Uninspired to a Hellish Extent", "duracao": "3:02"},
+    {"id": 5, "titulo": "Levitating", "artista": "Dua Lipa", "album": "Future Nostalgia", "duracao": "3:23"},
+    {"id": 6, "titulo": "bad guy", "artista": "Billie Eilish", "album": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?", "duracao": "3:14"},
+    {"id": 7, "titulo": "Sunflower", "artista": "Post Malone, Swae Lee", "album": "Spider-Man: Into the Spider-Verse", "duracao": "2:38"},
+    {"id": 8, "titulo": "Senorita", "artista": "Shawn Mendes, Camila Cabello", "album": "Shawn Mendes (Deluxe)", "duracao": "3:11"},
+    {"id": 9, "titulo": "Old Town Road", "artista": "Lil Nas X, Billy Ray Cyrus", "album": "7 EP", "duracao": "2:37"},
+    {"id": 10, "titulo": "Watermelon Sugar", "artista": "Harry Styles", "album": "Fine Line", "duracao": "2:54"},
+    {"id": 11, "titulo": "Don't Start Now", "artista": "Dua Lipa", "album": "Future Nostalgia", "duracao": "3:03"},
+    {"id": 12, "titulo": "Rockstar", "artista": "DaBaby, Roddy Ricch", "album": "BLAME IT ON BABY", "duracao": "3:01"},
+    {"id": 13, "titulo": "Perfect", "artista": "Ed Sheeran", "album": "÷ (Divide)", "duracao": "4:23"},
+    {"id": 14, "titulo": "Happier", "artista": "Marshmello, Bastille", "album": "Happier", "duracao": "3:34"},
+    {"id": 15, "titulo": "Memories", "artista": "Maroon 5", "album": "JORDI", "duracao": "3:09"},
+    {"id": 16, "titulo": "Believer", "artista": "Imagine Dragons", "album": "Evolve", "duracao": "3:24"},
+    {"id": 17, "titulo": "Shallow", "artista": "Lady Gaga, Bradley Cooper", "album": "A Star Is Born Soundtrack", "duracao": "3:36"},
+    {"id": 18, "titulo": "Circles", "artista": "Post Malone", "album": "Hollywood's Bleeding", "duracao": "3:35"},
+    {"id": 19, "titulo": "Peaches", "artista": "Justin Bieber, Daniel Caesar, Giveon", "album": "Justice", "duracao": "3:18"},
+    {"id": 20, "titulo": "MONTERO (Call Me By Your Name)", "artista": "Lil Nas X", "album": "MONTERO", "duracao": "2:17"}
+]

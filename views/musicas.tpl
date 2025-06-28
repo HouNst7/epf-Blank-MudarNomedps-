@@ -14,7 +14,9 @@
     % else:
         <p>Nenhuma música cadastrada.</p>
     % end
-    <a href="/musicas/nova">Adicionar Música</a>
-    <br><a href="/">Voltar para Home</a>
+    % if usuario and usuario['tipo'] == 'admin':
+        <a href="/musicas/cadastrar">Cadastrar Música</a><br>
+    % end
+    <a href="/">Voltar para Home</a>
 </body>
 </html>
