@@ -1,8 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Usuario Teste",
+        "nome": "Usuario Teste",
         "email": "usuarioteste@email.com",
-        "birthdate": "1999-10-21"
+        "senha": "1999-10-21",
+        "tipo": "regular"
+    },
+    {
+        "id": 2,
+        "nome": "nicolai",
+        "email": "eliggas@hotmail.com",
+        "senha": "1234",
+        "tipo": "regular"
     }
 ]
