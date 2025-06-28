@@ -3,6 +3,14 @@
         "id": 1,
         "name": "UsuÃ¡rio Teste",
         "email": "uduarioteste@email.com",
-        "birthdate": "1999-10-21"
+        "birthdate": "1999-10-21",
+        "password": null
+    },
+    {
+        "id": 2,
+        "name": "elias",
+        "email": "241011706@aluno.unb.br",
+        "birthdate": "2005-05-05",
+        "password": "1234"
     }
 ]
