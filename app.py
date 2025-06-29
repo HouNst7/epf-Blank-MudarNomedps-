@@ -53,7 +53,7 @@ def login():
                 response.set_cookie('usuario_email', email, path='/')
                 return redirect('/')
         erro = 'Usuário ou senha inválidos!'
-    return template('login', error=erro)
+    return template('login', erro=erro)
 
 @route('/logout')
 def logout():
@@ -75,7 +75,7 @@ def cadastro():
             users.append({'id': novo_id, 'nome': nome, 'email': email, 'senha': senha, 'tipo': 'regular'})
             save_users(users)
             return '<h2>Cadastro realizado com sucesso!</h2><a href="/login">Ir para login</a>'
-    return template('cadastro', error=erro)
+    return template('cadastro', erro=erro)
 
 @route('/playlists')
 def listar_playlists():
@@ -204,7 +204,7 @@ def remover_musica_playlist(playlist_id, musica_id):
         save_playlists(playlists)
     return redirect(f'/playlists/{playlist_id}')
 
-@route('/playlists/<playlist_id:int>/tocar',
+@route('/playlists/<playlist_id:int>/tocar', method=['POST'])
 def tocar_playlist(playlist_id):
     from services.podcasts_service import load_podcasts
     playlist = get_playlist_by_id(playlist_id)
