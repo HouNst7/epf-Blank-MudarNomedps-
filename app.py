@@ -8,6 +8,7 @@ from services.musicas_service import load_musicas, add_musica, get_musica_by_id
 from models.musica import Musica
 from controllers.musicas_controller import *
 from controllers.podcasts_controller import *
+from bottle import static_file, route #para aparecer as imagens nas páginas do servidor
 
 # Explicitly set the template path
 TEMPLATE_PATH.insert(0, os.path.join(os.path.dirname(__file__), 'views'))
@@ -224,6 +225,10 @@ def tocar_playlist(playlist_id):
                 itens.append({'tipo': 'podcast', 'obj': p})
     usuario = get_usuario_logado()
     return template('tocar_playlist', playlist=playlist, itens=itens, usuario=usuario)
+
+@route('/static/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='./static')
 
 app = default_app()
 
