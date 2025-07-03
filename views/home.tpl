@@ -270,29 +270,87 @@
                         Minhas Playlists
                     % end
                 </h4>
-                <p>Playlist --nome--</p>
+                % if usuario:
+                    % if playlists_usuario:
+                        <ul style="margin-left:10px;">
+                        % for p in playlists_usuario:
+                            <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
+                        % end
+                        </ul>
+                    % else:
+                        <p style="margin-left:10px; color:#aaa;">Nenhuma playlist sua.</p>
+                    % end
+                % end
+            </div>
+            <div class="section">
+                <h4>Playlists Públicas</h4>
+                % if playlists_publicas:
+                    <ul style="margin-left:10px;">
+                    % for p in playlists_publicas:
+                        <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
+                    % end
+                    </ul>
+                % else:
+                    <p style="margin-left:10px; color:#aaa;">Nenhuma playlist pública.</p>
+                % end
             </div>
         </div>
 
         <!-- Conteúdo principal -->
         <div class="main-content">
-            <h3>Músicas em alta</h3>
-            <div class="grid-musicas">
-                % for i in range(18):  # 6 colunas x 3 linhas
-                <div class="capa-musica">
-                    <img src="/static/img/tetoris.png" alt="Capa da música">
-                    <div class="hover-overlay">
-                        <button class="play-btn">
-                            <img src="/static/img/play-button-arrowhead.png" alt="Play">
-                        </button>
-                    </div>
-                    <div class="info-musica">
-                        <div class="titulo">Tetoris</div>
-                        <div class="autor">kasane teto</div>
-                    </div>
-                </div>
+            % if q:
+                <h3>Resultados para "{{q}}"</h3>
+                % if not resultados_musicas and not resultados_podcasts:
+                    <p>Nenhum resultado encontrado.</p>
                 % end
-            </div>
+                % if resultados_musicas:
+                    <h4>Músicas</h4>
+                    <div class="grid-musicas">
+                    % for musica in resultados_musicas:
+                        <div class="capa-musica">
+                            <img src="/static/img/tetoris.png" alt="Capa da música">
+                            <div class="hover-overlay">
+                                <a href="/musicas/{{musica.id}}" class="play-btn">
+                                    <img src="/static/img/play-button-arrowhead.png" alt="Play">
+                                </a>
+                            </div>
+                            <div class="info-musica">
+                                <div class="titulo">{{musica.titulo}}</div>
+                                <div class="autor">{{musica.artista}}</div>
+                            </div>
+                        </div>
+                    % end
+                    </div>
+                % end
+                % if resultados_podcasts:
+                    <h4>Podcasts</h4>
+                    <ul>
+                    % for podcast in resultados_podcasts:
+                        <li>
+                            <a href="/podcasts/{{podcast.id}}"><b>{{podcast.titulo}}</b></a> - Apresentador: {{podcast.apresentador}} ({{podcast.episodios}} episódios, {{podcast.duracao}})
+                        </li>
+                    % end
+                    </ul>
+                % end
+            % else:
+                <h3>Músicas em alta</h3>
+                <div class="grid-musicas">
+                    % for i in range(18):  # 6 colunas x 3 linhas
+                    <div class="capa-musica">
+                        <img src="/static/img/tetoris.png" alt="Capa da música">
+                        <div class="hover-overlay">
+                            <button class="play-btn">
+                                <img src="/static/img/play-button-arrowhead.png" alt="Play">
+                            </button>
+                        </div>
+                        <div class="info-musica">
+                            <div class="titulo">Tetoris</div>
+                            <div class="autor">kasane teto</div>
+                        </div>
+                    </div>
+                    % end
+                </div>
+            % end
         </div>
     </div>
 </body>

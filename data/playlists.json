@@ -3,10 +3,18 @@
         "id": 1,
         "nome": "vivi",
         "usuario_id": 1,
-        "musicas": [
-            2,
-            3,
-            5
+        "itens": [],
+        "publica": true
+    },
+    {
+        "id": 2,
+        "nome": "JamVelino",
+        "usuario_id": 3,
+        "itens": [
+            {
+                "tipo": "musica",
+                "id": 1
+            }
         ],
         "publica": true
     }

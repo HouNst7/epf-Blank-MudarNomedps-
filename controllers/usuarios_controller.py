@@ -1,4 +1,4 @@
-from bottle import route, request, redirect, template
+from bottle import route, request, redirect, template, response
 from models.usuarios import Usuario
 from services.usuarios_service import carregar_usuarios, salvar_usuarios, encontrar_por_email
 
@@ -25,20 +25,22 @@ def cadastro():
 
 @route('/login', method=['GET', 'POST'])
 def login():
+    erro = None
     if request.method == 'POST':
         email = request.forms.get('email')
         senha = request.forms.get('senha')
         usuario = encontrar_por_email(email)
 
         if usuario and usuario.senha == senha:
-            return f"Bem-vindo, {usuario.nome}!"
-        return "Login inválido!"
+            response.set_cookie('usuario_email', email, path='/')
+            return redirect('/')
+        erro = "Login inválido!"
 
-    return template('login')
+    return template('login', erro=erro)
 
-
-from bottle import route, template
 
 @route('/')
 def home():
-    return template('home')
+    usuario_email = request.get_cookie('usuario_email')
+    usuario = encontrar_por_email(usuario_email) if usuario_email else None
+    return template('home', usuario=usuario)

@@ -12,5 +12,12 @@
         "email": "eliggas@hotmail.com",
         "senha": "1234",
         "tipo": "regular"
+    },
+    {
+        "id": 3,
+        "nome": "Avelino",
+        "email": "belisco123@gmail.com",
+        "senha": "belisco",
+        "tipo": "regular"
     }
 ]

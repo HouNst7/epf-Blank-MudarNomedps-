@@ -39,8 +39,26 @@ def get_usuario_logado():
 
 @route('/')
 def home():
+    from services.podcasts_service import load_podcasts
     usuario = get_usuario_logado()
-    return template('home', usuario=usuario)
+    playlists_usuario = []
+    playlists_publicas = []
+    q = request.query.q or ''
+    musicas = load_musicas()
+    podcasts = load_podcasts()
+    resultados_musicas = []
+    resultados_podcasts = []
+    if q:
+        q_lower = q.lower()
+        resultados_musicas = [m for m in musicas if q_lower in m.titulo.lower() or q_lower in m.artista.lower() or q_lower in m.album.lower()]
+        resultados_podcasts = [p for p in podcasts if q_lower in p.titulo.lower() or q_lower in p.apresentador.lower()]
+    if usuario:
+        todas = load_playlists()
+        playlists_usuario = [p for p in todas if p.usuario_id == usuario['id']]
+        playlists_publicas = [p for p in todas if p.publica and p.usuario_id != usuario['id']]
+    else:
+        playlists_publicas = [p for p in load_playlists() if p.publica]
+    return template('home', usuario=usuario, playlists_usuario=playlists_usuario, playlists_publicas=playlists_publicas, q=q, resultados_musicas=resultados_musicas, resultados_podcasts=resultados_podcasts)
 
 @route('/login', method=['GET', 'POST'])
 def login():
@@ -165,7 +183,13 @@ def adicionar_item_playlist(playlist_id):
                 playlist.itens.append({'tipo': 'podcast', 'id': podcast_id})
             else:
                 erro = 'Podcast já está na playlist.'
-        save_playlists(load_playlists())
+        # Salvar a playlist alterada corretamente
+        playlists = load_playlists()
+        for idx, p in enumerate(playlists):
+            if p.id == playlist.id:
+                playlists[idx] = playlist
+                break
+        save_playlists(playlists)
         if not erro:
             return redirect(f'/playlists/{playlist_id}')
     return template('adicionar_musica', playlist=playlist, musicas=musicas, podcasts=podcasts, erro=erro)
