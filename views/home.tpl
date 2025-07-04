@@ -272,23 +272,37 @@
                         Minhas Playlists
                     % end
                 </h4>
-                % if playlists:
-                <ul class="playlist-list">
-                    % for playlist in playlists:
-                    <li>
-                        <a href="/playlists/{{playlist.id}}">{{playlist.nome}}</a>
-                        <div class="playlist-meta">
-                            {{'pública' if playlist.publica else 'privada'}} —
-                            {{len(playlist.itens)}} músicas —
-                            por {{playlist.usuario_nome or 'desconhecido'}}
-                        </div>
-                        <a href="/playlists/{{playlist.id}}/adicionar" class="section-link">Adicionar música</a>
-                    </li>
+                % if usuario:
+                    % if playlists_usuario:
+                        <ul style="margin-left:10px;">
+                        % for p in playlists_usuario:
+                            <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
+                        % end
+                        </ul>
+                    % else:
+                        <p style="margin-left:10px; color:#aaa;">Nenhuma playlist sua.</p>
                     % end
-                </ul>
-            % else:
-                <p>Nenhuma playlist encontrada.</p>
-            % end
+                % end
+            </div>
+            <div class="section">
+                <h4>Playlists Públicas</h4>
+                % if playlists_publicas:
+                    <ul style="margin-left:10px;">
+                    % for p in playlists_publicas:
+                        <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
+                    % end
+                    </ul>
+                % else:
+                    <p style="margin-left:10px; color:#aaa;">Nenhuma playlist pública.</p>
+                % end
+            </div>
+            <div class="section">
+                <h4>
+                    <a class="section-link" href="/podcasts">Podcasts</a>
+                </h4>
+                % if usuario and usuario['tipo'] == 'admin':
+                    <a class="section-link" href="/podcasts/novo">Cadastrar Podcast</a>
+                % end
             </div>
         </div>
 
