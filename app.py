@@ -86,12 +86,13 @@ def cadastro():
         email = request.forms.get('email')
         senha = request.forms.get('senha')
         nome = request.forms.get('nome')
+        tipo = request.forms.get('tipo') or 'regular'
         users = load_users()
         if any(user['email'] == email for user in users):
             erro = 'E-mail já cadastrado!'
         else:
             novo_id = max([u.get('id', 0) for u in users] or [0]) + 1
-            users.append({'id': novo_id, 'nome': nome, 'email': email, 'senha': senha, 'tipo': 'regular'})
+            users.append({'id': novo_id, 'nome': nome, 'email': email, 'senha': senha, 'tipo': tipo})
             save_users(users)
             return '<h2>Cadastro realizado com sucesso!</h2><a href="/login">Ir para login</a>'
     return template('cadastro', erro=erro)

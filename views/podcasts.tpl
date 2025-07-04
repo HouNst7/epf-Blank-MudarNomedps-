@@ -3,7 +3,9 @@
 <head><title>Podcasts</title></head>
 <body>
     <h2>Podcasts</h2>
-    <a href="/podcasts/novo">Cadastrar novo podcast</a>
+    % if usuario and usuario['tipo'] == 'admin':
+        <a href="/podcasts/novo">Cadastrar novo podcast</a>
+    % end
     % if podcasts:
         <ul>
         % for podcast in podcasts:

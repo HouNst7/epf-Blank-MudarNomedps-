@@ -1,23 +1,16 @@
 [
     {
         "id": 1,
-        "nome": "Usuario Teste",
-        "email": "usuarioteste@email.com",
-        "senha": "1999-10-21",
-        "tipo": "regular"
+        "nome": "Nicolai Bukvar",
+        "email": "teste123@gmail.com",
+        "senha": "teste123",
+        "tipo": "admin"
     },
     {
         "id": 2,
-        "nome": "nicolai",
-        "email": "eliggas@hotmail.com",
-        "senha": "1234",
-        "tipo": "regular"
-    },
-    {
-        "id": 3,
-        "nome": "Avelino",
-        "email": "belisco123@gmail.com",
-        "senha": "belisco",
+        "nome": "Vivicius",
+        "email": "vivicius123@gmail.com",
+        "senha": "vivicius",
         "tipo": "regular"
     }
 ]

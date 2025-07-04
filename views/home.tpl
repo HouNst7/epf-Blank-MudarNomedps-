@@ -294,6 +294,14 @@
                     <p style="margin-left:10px; color:#aaa;">Nenhuma playlist pública.</p>
                 % end
             </div>
+            <div class="section">
+                <h4>
+                    <a class="section-link" href="/podcasts">Podcasts</a>
+                </h4>
+                % if usuario and usuario['tipo'] == 'admin':
+                    <a class="section-link" href="/podcasts/novo">Cadastrar Podcast</a>
+                % end
+            </div>
         </div>
 
         <!-- Conteúdo principal -->
