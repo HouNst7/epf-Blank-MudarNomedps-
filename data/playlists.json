@@ -1,2 +1,16 @@
 [
+    {
+        "id": 1,
+        "nome": "playlist1",
+        "usuario_id": 3,
+        "itens": [],
+        "publica": true
+    },
+    {
+        "id": 2,
+        "nome": "playlist2",
+        "usuario_id": 3,
+        "itens": [],
+        "publica": true
+    }
 ]

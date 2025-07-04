@@ -116,6 +116,17 @@
             margin-top: 0;
         }
 
+        .section-link {
+            display: block;
+            margin-top: 10px;
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .section-link:hover {
+            text-decoration: underline;
+        }
+
         {* grade das músicas *}
         .grid-musicas {
             display: grid;
@@ -222,7 +233,13 @@
         <div class="sidebar">
             <h3>Suas músicas</h3>
             <div class="section">
-                <h4>Minhas Playlists</h4>
+                <h4>
+                    % if usuario:
+                        <a class="section-link" href="/playlists">Minhas Playlists</a>
+                    % else:
+                        Minhas Playlists
+                    % end
+                </h4>
                 <p>Playlist --nome--</p>
             </div>
         </div>
@@ -231,20 +248,20 @@
         <div class="main-content">
             <h3>Músicas em alta</h3>
             <div class="grid-musicas">
-                % for i in range(18):  # 6 colunas x 3 linhas
-                <div class="capa-musica">
-                    <img src="/static/img/tetoris.png" alt="Capa da música">
+                 % for musica in musicas[:18]:
+                 <div class="capa-musica">
+                    <img src="/static/img/capaID{{musica.id}}.png" alt="Capa da música">
                     <div class="hover-overlay">
-                        <button class="play-btn">
+                         <a href="/musicas/{{musica.id}}" class="play-btn">
                             <img src="/static/img/play-button-arrowhead.png" alt="Play">
-                        </button>
+                         </a>
                     </div>
                     <div class="info-musica">
-                        <div class="titulo">Tetoris</div>
-                        <div class="autor">kasane teto</div>
+                        <div class="titulo">{{musica.titulo}}</div>
+                        <div class="autor">{{musica.artista}}</div>
                     </div>
-                </div>
-                % end
+             </div>
+             % end
             </div>
         </div>
     </div>

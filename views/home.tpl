@@ -102,6 +102,8 @@
             margin-top: 0;
         }
 
+
+        {* Frases-botões com link no canto esquerdo *}
         .section-link {
             display: block;
             margin-top: 10px;
@@ -230,10 +232,10 @@
             <img class="logo" src="/static/img/BottleLogo.png" alt="Logo">
         </a>
 
-        <!-- Pesquisa -->
+        <!-- Pesquisa + Botão Home -->
         <div class="search-area">
             <form method="get" class="search-bar">
-                <input type="text" name="q" placeholder="Qual música você quer escutar agora?">
+                <input type="text" name="q" placeholder="Busca por nome, artista ou álbum" value="{{q or ''}}">
                 <button type="submit" style="all:unset;cursor:pointer;">
                     <img src="/static/img/lupa-branca.png" alt="Buscar">
                 </button>
@@ -270,95 +272,66 @@
                         Minhas Playlists
                     % end
                 </h4>
-                % if usuario:
-                    % if playlists_usuario:
-                        <ul style="margin-left:10px;">
-                        % for p in playlists_usuario:
-                            <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
-                        % end
-                        </ul>
-                    % else:
-                        <p style="margin-left:10px; color:#aaa;">Nenhuma playlist sua.</p>
+                % if playlists:
+                <ul class="playlist-list">
+                    % for playlist in playlists:
+                    <li>
+                        <a href="/playlists/{{playlist.id}}">{{playlist.nome}}</a>
+                        <div class="playlist-meta">
+                            {{'pública' if playlist.publica else 'privada'}} —
+                            {{len(playlist.itens)}} músicas —
+                            por {{playlist.usuario_nome or 'desconhecido'}}
+                        </div>
+                        <a href="/playlists/{{playlist.id}}/adicionar" class="section-link">Adicionar música</a>
+                    </li>
                     % end
-                % end
-            </div>
-            <div class="section">
-                <h4>Playlists Públicas</h4>
-                % if playlists_publicas:
-                    <ul style="margin-left:10px;">
-                    % for p in playlists_publicas:
-                        <li><a class="section-link" href="/playlists/{{p.id}}">{{p.nome}}</a></li>
-                    % end
-                    </ul>
-                % else:
-                    <p style="margin-left:10px; color:#aaa;">Nenhuma playlist pública.</p>
-                % end
-            </div>
-            <div class="section">
-                <h4>
-                    <a class="section-link" href="/podcasts">Podcasts</a>
-                </h4>
-                % if usuario and usuario['tipo'] == 'admin':
-                    <a class="section-link" href="/podcasts/novo">Cadastrar Podcast</a>
-                % end
+                </ul>
+            % else:
+                <p>Nenhuma playlist encontrada.</p>
+            % end
             </div>
         </div>
 
         <!-- Conteúdo principal -->
         <div class="main-content">
-            % if q:
-                <h3>Resultados para "{{q}}"</h3>
-                % if not resultados_musicas and not resultados_podcasts:
-                    <p>Nenhum resultado encontrado.</p>
-                % end
-                % if resultados_musicas:
-                    <h4>Músicas</h4>
-                    <div class="grid-musicas">
+            <h3>Músicas em alta</h3>
+            <div class="grid-musicas">
+                % if q and resultados_musicas:
                     % for musica in resultados_musicas:
-                        <div class="capa-musica">
-                            <img src="/static/img/tetoris.png" alt="Capa da música">
-                            <div class="hover-overlay">
-                                <a href="/musicas/{{musica.id}}" class="play-btn">
-                                    <img src="/static/img/play-button-arrowhead.png" alt="Play">
-                                </a>
-                            </div>
-                            <div class="info-musica">
-                                <div class="titulo">{{musica.titulo}}</div>
-                                <div class="autor">{{musica.artista}}</div>
-                            </div>
-                        </div>
-                    % end
-                    </div>
-                % end
-                % if resultados_podcasts:
-                    <h4>Podcasts</h4>
-                    <ul>
-                    % for podcast in resultados_podcasts:
-                        <li>
-                            <a href="/podcasts/{{podcast.id}}"><b>{{podcast.titulo}}</b></a> - Apresentador: {{podcast.apresentador}} ({{podcast.episodios}} episódios, {{podcast.duracao}})
-                        </li>
-                    % end
-                    </ul>
-                % end
-            % else:
-                <h3>Músicas em alta</h3>
-                <div class="grid-musicas">
-                    % for i in range(18):  # 6 colunas x 3 linhas
                     <div class="capa-musica">
-                        <img src="/static/img/tetoris.png" alt="Capa da música">
+                        <img src="/static/img/capaID{{musica.id}}.png" alt="Capa da música">
                         <div class="hover-overlay">
-                            <button class="play-btn">
+                            <a href="/musicas/{{musica.id}}" class="play-btn">
                                 <img src="/static/img/play-button-arrowhead.png" alt="Play">
-                            </button>
+                            </a>
                         </div>
                         <div class="info-musica">
-                            <div class="titulo">Tetoris</div>
-                            <div class="autor">kasane teto</div>
+                            <div class="titulo">{{musica.titulo}}</div>
+                            <div class="autor">{{musica.artista}}</div>
                         </div>
                     </div>
                     % end
-                </div>
-            % end
+                % elif q and not resultados_musicas:
+                    <div style="grid-column: 1 / -1; text-align: center; color: #ccc; margin-top: 30px;">
+                        Nenhuma música encontrada para "{{q}}".
+                    </div>
+                % else:
+                    % for musica in musicas[:18]:
+                    <div class="capa-musica">
+                        <img src="/static/img/capaID{{musica.id}}.png" alt="Capa da música">
+                        <div class="hover-overlay">
+                            <a href="/musicas/{{musica.id}}" class="play-btn">
+                                <img src="/static/img/play-button-arrowhead.png" alt="Play">
+                            </a>
+                        </div>
+                        <div class="info-musica">
+                            <div class="titulo">{{musica.titulo}}</div>
+                            <div class="autor">{{musica.artista}}</div>
+                        </div>
+                    </div>
+                    % end
+                % end
+            </div>
         </div>
     </div>
 </body>
