@@ -48,6 +48,8 @@ def home():
     podcasts = load_podcasts()
     resultados_musicas = []
     resultados_podcasts = []
+    musicas = musicas
+    playlists = playlists_usuario + playlists_publicas
     if q:
         q_lower = q.lower()
         resultados_musicas = [m for m in musicas if q_lower in m.titulo.lower() or q_lower in m.artista.lower() or q_lower in m.album.lower()]
@@ -58,7 +60,8 @@ def home():
         playlists_publicas = [p for p in todas if p.publica and p.usuario_id != usuario['id']]
     else:
         playlists_publicas = [p for p in load_playlists() if p.publica]
-    return template('home', usuario=usuario, playlists_usuario=playlists_usuario, playlists_publicas=playlists_publicas, q=q, resultados_musicas=resultados_musicas, resultados_podcasts=resultados_podcasts)
+        playlists = playlists
+    return template('home', usuario=usuario, playlists_usuario=playlists_usuario, playlists_publicas=playlists_publicas, q=q, resultados_musicas=resultados_musicas, resultados_podcasts=resultados_podcasts, musicas = musicas, playlists=playlists)
 
 @route('/login', method=['GET', 'POST'])
 def login():
@@ -106,11 +109,12 @@ def listar_playlists():
     todas = load_playlists()
     users = load_users()
     users_dict = {u['id']: u['nome'] for u in users}
+    musicas = load_musicas()
     # Adiciona o nome do criador em cada playlist
     for p in todas:
         p.usuario_nome = users_dict.get(p.usuario_id, 'desconhecido')
     playlists = [p for p in todas if p.publica or p.usuario_id == usuario['id']]
-    return template('playlists', playlists=playlists, usuario=usuario)
+    return template('playlists', playlists=playlists, usuario=usuario, musicas=musicas)
 
 @route('/playlists/nova', method=['GET', 'POST'])
 def criar_playlist():

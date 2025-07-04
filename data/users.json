@@ -12,5 +12,19 @@
         "email": "vivicius123@gmail.com",
         "senha": "vivicius",
         "tipo": "regular"
+    },
+    {
+        "id": 3,
+        "nome": "Elias",
+        "email": "eliasteste@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 4,
+        "nome": "EliasADM",
+        "email": "eliasteste2@gmail.com",
+        "senha": "1234",
+        "tipo": "admin"
     }
 ]
