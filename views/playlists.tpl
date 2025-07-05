@@ -9,7 +9,7 @@
             font-family: sans-serif;
             background: linear-gradient(to top, #000000, #1a1a1a);
             color: white;
-            height: 100vh;
+            height: 100%;
         }
 
         header {
@@ -60,7 +60,7 @@
         }
 
         .btn-sair {
-            background-color: #8b0000;
+            background:rgb(184, 17, 17);
             color: white;
             text-decoration: none;
             padding: 8px 16px;
@@ -68,6 +68,10 @@
             font-weight: bold;
             font-size: 14px;
             margin-top: -20px;
+        }
+
+        .btn-sair:hover{
+            background:rgb(182, 13, 13);
         }
 
         {* container principal *}
@@ -124,11 +128,15 @@
             display: inline-block;
             margin-top: 20px;
             padding: 8px 16px;
-            background-color: #4caf50;
+            background: #8a2be2;
             color: black;
             font-weight: bold;
             text-decoration: none;
             border-radius: 20px;
+        }
+
+        .criar-playlist:hover{
+            background:rgb(130, 30, 224);
         }
 
         {* conteúdo do container principal *}
@@ -161,6 +169,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-top: 22px;
+        }
+
+        .modulo-autenticacao img {
+            width: 50px;
+            height: 50px;
+            margin-top: -20px;
         }
 
         {* letra da mensagem de "olá, usuário" *}
@@ -265,6 +280,21 @@
             height: 25px;
             margin-left: 3px;
         }
+
+        .{* botão home *}
+        .home-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            margin-left: 10px;
+            margin-top: -4px;
+        }
+
+        .home-btn img {
+            height: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -282,6 +312,9 @@
                     <img src="/static/img/lupa-branca.png" alt="Buscar">
                 </button>
             </form>
+             <a href="/" class="home-btn" title="Home">
+                <img src="/static/img/home button2.png" alt="Home" />
+             </a>
         </div>
 
         <!-- Autenticação -->

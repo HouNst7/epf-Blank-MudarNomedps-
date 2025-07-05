@@ -49,12 +49,16 @@
         .login-container input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50;
+            background: #8a2be2;
             color: white;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             font-size: 16px;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background:rgb(130, 30, 224);
         }
 
         .login-container a {

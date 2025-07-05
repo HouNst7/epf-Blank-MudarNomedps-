@@ -15,12 +15,12 @@
             justify-content: center;
         }
 
-        {* div central *}
         .form-container {
+            position: relative;
             background-color: #2e2e2e;
             padding: 30px;
             border-radius: 15px;
-            width: 400px;
+            width: 450px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
             text-align: center;
         }
@@ -36,7 +36,6 @@
             gap: 15px;
         }
 
-        {* input de texto *}
         input[type="text"] {
             width: 100%;
             padding: 10px;
@@ -47,7 +46,6 @@
             font-size: 14px;
         }
 
-        {* checkbox *}
         .checkbox-container {
             display: flex;
             align-items: center;
@@ -55,9 +53,8 @@
             font-size: 14px;
         }
 
-        {* botão *}
         .btn-criar {
-            background-color: #1e90ff;
+            background: #8a2be2;
             color: white;
             padding: 10px;
             width: 100%;
@@ -69,20 +66,7 @@
         }
 
         .btn-criar:hover {
-            background-color: #187bcd;
-        }
-
-        {* frase-botão *}
-        .frase-botao {
-            margin-top: 20px;
-            color: #ccc;
-            font-size: 14px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .frase-botao:hover {
-            text-decoration: underline;
+            background: rgb(130, 30, 224);
         }
 
         .erro {
@@ -90,10 +74,53 @@
             margin-bottom: 10px;
             font-size: 14px;
         }
+
+        .btn-voltar, .btn-home {
+            position: absolute;
+            top: 15px;
+            background-color: #555;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .btn-voltar img {
+            height: 30px;
+            width: 30px;
+            margin-right: 2px;
+        }
+        
+        .btn-home img {
+            height: 22px;
+            width: 22px;
+            margin-right: -2px;
+            margin-bottom: 2px;
+        }
+
+        .btn-voltar {
+            left: 15px;
+        }
+
+        .btn-home {
+            right: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
+        <!-- Botões nos cantos -->
+        <a href="/playlists" class="btn-voltar" title="Voltar">
+            <img src="/static/img/return-arrow.png" alt="Voltar">
+        </a>
+        <a href="/" class="btn-home" title="Home">
+            <img src="/static/img/home button.png" alt="Home">
+        </a>
+
         <h2>Criar Nova Playlist</h2>
 
         % if erro:
@@ -111,9 +138,6 @@
 
             <input type="submit" value="Criar" class="btn-criar">
         </form>
-
-        <a class="frase-botao" href="/playlists">Retornar para as suas playlists</a>
-        <a class="frase-botao" href="/">Retornar para a página inicial</a>
     </div>
 </body>
 </html>

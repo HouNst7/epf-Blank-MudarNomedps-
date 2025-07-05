@@ -78,7 +78,7 @@
         }
 
         .btn-salvar {
-            background-color: #1e90ff;
+            background: #8a2be2;
             color: white;
             padding: 10px;
             width: 100%;
@@ -91,11 +91,11 @@
         }
 
         .btn-salvar:hover {
-            background-color: rgb(10, 113, 197);
+            background:rgb(130, 30, 224);
         }
 
         .btn-excluir {
-            background-color: red;
+            background:rgb(184, 17, 17);
             color: white;
             padding: 10px;
             width: 100%;
@@ -108,10 +108,10 @@
         }
 
         .btn-excluir:hover {
-            background-color: darkred;
+            background:rgb(182, 13, 13);
         }
 
-        .btn-home {
+        .home-btn {
             position: absolute;
             top: 15px;
             left: 15px;
@@ -126,9 +126,11 @@
             cursor: pointer;
         }
 
-        .btn-home img {
+        .home-btn img {
             width: 22px;
             height: 22px;
+            margin-bottom: 3px;
+            margin-left: 1px;
         }
 
         senha-container {
@@ -146,7 +148,7 @@
             top: 50%;
             right: 30px;
             transform: translateY(-375%);
-            width: 28px;
+            width: 26px;
             height: 23px;
             cursor: pointer;
         }
@@ -155,7 +157,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="/" class="btn-home" title="Home">
+        <a href="/" class="home-btn" title="Home">
             <img src="/static/img/home button.png" alt="Home">
         </a>
 

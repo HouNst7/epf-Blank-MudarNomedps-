@@ -9,7 +9,7 @@
             font-family: sans-serif;
             background: linear-gradient(to top, #000000, #1a1a1a);
             color: white;
-            height: 100vh;
+            height: 100%;
         }
 
         header {
@@ -31,6 +31,8 @@
             justify-content: center;
             width: 100%;
             gap: 50px;
+            transform: translateX(9%);
+            
         }
 
         {* botão home *}
@@ -39,7 +41,8 @@
             border: none;
             cursor: pointer;
             margin: 10px;
-            margin-top: -5px;
+            margin-left: 10px;
+            margin-top: -4px;
         }
 
         .home-btn img {
@@ -73,14 +76,20 @@
         }
 
         .btn-sair {
-            background-color: #8b0000;
+            background:rgb(184, 17, 17);
             color: white;
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 14px;
-            margin-top: -20px;
+            margin-top: -0px;
+            transform: translateX(325%);
+           
+        }
+
+        .btn-sair:hover{
+            background:rgb(182, 13, 13);
         }
 
         {* container maior, que contém as músicas *}
@@ -215,6 +224,22 @@
             font-weight: bold;
             text-decoration: none;
         }
+
+        .btn:hover{
+            background: #8a2be2;
+        }
+
+        .modulo-perfil {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(140%);
+        }
+
+        .modulo-perfil img {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -233,18 +258,20 @@
                 </button>
             </form>
             <a class="home-btn" href="/">
-                <img src="/static/img/home button.png" alt="Home">
+                <img src="/static/img/home button2.png" alt="Home">
             </a>
-            % if usuario:
-                <span style="margin-left:20px; font-weight:bold;">
-                    <a href="/perfil" style="color:inherit;text-decoration:none;">{{usuario['nome']}}</a>
-                </span>
-                % if usuario.get('icone'):
-                    <a href="/perfil">
-                        <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
-                    </a>
+            <div class="modulo-perfil">
+                % if usuario:
+                    <span style="margin-left:20px; font-weight:bold;">
+                        <a href="/perfil" style="color:inherit;text-decoration:none;">{{usuario['nome']}}</a>
+                    </span>
+                    % if usuario.get('icone'):
+                        <a href="/perfil">
+                            <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
+                        </a>
+                    % end
                 % end
-            % end
+            
         </div>
 
         <!-- Botão de Sair -->

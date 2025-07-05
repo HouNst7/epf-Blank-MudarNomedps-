@@ -52,6 +52,7 @@
             border-radius: 20px;
             padding: 10px 25px;
             font-weight: bold;
+            font-size: 18px;
             cursor: pointer;
             width: 100%;
             margin-top: 10px;
@@ -83,15 +84,28 @@
         .btn-icone img {
             height: 20px;
         }
-
+        
         .btn-voltar {
             top: 15px;
             left: 15px;
         }
 
+        .btn-voltar img {
+            height: 30px;
+            width: 30px;
+            margin-right: 2px;
+        }
+
         .btn-home {
             top: 15px;
             right: 15px;
+        }
+
+        .btn-home img {
+            height: 22px;
+            width: 22px;
+            margin-right: -2px;
+            margin-bottom: 2px;
         }
     </style>
 </head>

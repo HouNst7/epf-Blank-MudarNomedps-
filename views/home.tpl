@@ -9,7 +9,7 @@
             font-family: sans-serif;
             background: linear-gradient(to top, #000000, #1a1a1a);
             color: white;
-            height: 100vh;
+            height: 100%;
         }
 
         header {
@@ -60,14 +60,19 @@
         }
 
         .btn-sair {
-            background-color: #8b0000;
+            background:rgb(184, 17, 17);
             color: white;
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 14px;
-            margin-top: -20px;
+            margin-top: 70px;
+            
+        }
+
+        .btn-sair:hover{
+            background:rgb(182, 13, 13);
         }
 
         {* container principal *}
@@ -120,6 +125,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            transform: translateX(-12%);
+            transform: translateY(12%);
         }
 
         .modulo-autenticacao img {
@@ -231,10 +238,10 @@
         }
 
         .btn {
-            background-color: #007bff;
+            background: #8a2be2;
             color: white;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
@@ -242,7 +249,7 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background:rgb(130, 30, 224);
         }
     </style>
 </head>
