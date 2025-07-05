@@ -223,6 +223,16 @@
             <a class="home-btn" href="/">
                 <img src="/static/img/home button.png" alt="Home">
             </a>
+            % if usuario:
+                <span style="margin-left:20px; font-weight:bold;">
+                    <a href="/perfil" style="color:inherit;text-decoration:none;">{{usuario['nome']}}</a>
+                </span>
+                % if usuario.get('icone'):
+                    <a href="/perfil">
+                        <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
+                    </a>
+                % end
+            % end
         </div>
 
         <!-- Botão de Sair -->

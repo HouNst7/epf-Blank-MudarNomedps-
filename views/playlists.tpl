@@ -287,7 +287,14 @@
         <!-- Autenticação -->
         <div class="modulo-autenticacao">
             % if usuario:
-                <span>Olá, {{usuario['nome']}}!</span>
+                <span>
+                    <a href="/perfil" style="color:inherit;text-decoration:none;">{{usuario['nome']}}</a>
+                </span>
+                % if usuario.get('icone'):
+                    <a href="/perfil">
+                        <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
+                    </a>
+                % end
                 <a class="btn-sair" href="/logout">Sair</a>
             % else:
                 <a class="btn-cadastro" href="/cadastro">Cadastro</a>

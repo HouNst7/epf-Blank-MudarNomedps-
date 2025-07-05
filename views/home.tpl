@@ -263,7 +263,7 @@
             % if usuario:
                 <div>
                     <a href="/perfil" style="color:white;text-decoration:none;font-weight:bold;">
-                        <span>Olá, {{usuario['nome']}}!</span>
+                        <span>{{usuario['nome']}}</span>
                         % if usuario.get('icone'):
                             <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
                         % end

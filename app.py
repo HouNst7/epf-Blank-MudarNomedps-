@@ -147,7 +147,7 @@ def listar_musicas():
     if q:
         q_lower = q.lower()
         musicas = [m for m in musicas if q_lower in m.titulo.lower() or q_lower in m.artista.lower() or q_lower in m.album.lower()]
-    return template('musicas', musicas=musicas, usuario=usuario, q=q)
+    return template('musicas', musicas=musicas, usuario=usuario.to_dict() if usuario else None, q=q)
 
 @route('/musicas/<musica_id:int>')
 def detalhes_musica(musica_id):
@@ -266,9 +266,9 @@ def excluir_playlist(playlist_id):
     if not playlist:
         return template('erro', mensagem='Playlist não encontrada.')
     # Só permite excluir se for dono ou admin
-    if playlist.usuario_id != usuario['id'] and usuario['tipo'] != 'admin':
+    if playlist.usuario_id != usuario.id and usuario.tipo != 'admin':
         return template('erro', mensagem='Você não tem permissão para excluir esta playlist.')
-    delete_playlist(playlist_id, usuario_id=None if usuario['tipo']=='admin' else usuario['id'])
+    delete_playlist(playlist_id, usuario_id=None if usuario.tipo=='admin' else usuario.id)
     return redirect('/playlists')
 
 @route('/static/<filepath:path>')
