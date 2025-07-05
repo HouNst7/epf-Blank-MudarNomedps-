@@ -1,121 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastrar Podcast</title>
+    <title>Novo Podcast</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
             background: linear-gradient(to top, #000000, #1a1a1a);
             color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
         }
-
         .container {
-            background-color: #2e2e2e;
-            padding: 40px;
-            border-radius: 20px;
-            width: 400px;
-            position: relative;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            max-width: 400px;
+            margin: 60px auto;
+            background: #232323;
+            border-radius: 15px;
+            padding: 30px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-
-        .container h2 {
+        h2 {
             text-align: center;
             margin-bottom: 30px;
         }
-
         label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             font-weight: bold;
-            font-size: 14px;
         }
-
-        input[type="text"], input[type="number"] {
+        input[type="text"], textarea {
             width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            border-radius: 8px;
             border: none;
-            background-color: #444;
+            margin-bottom: 18px;
+            background: #333;
             color: white;
-            font-size: 14px;
         }
-
-        .btn-cadastrar {
-            background-color: #1e90ff;
-            margin-top: 10px;
+        .btn {
+            background: #8a2be2;
             color: white;
-            padding: 10px 20px;
             border: none;
             border-radius: 20px;
-            font-size: 16px;
+            padding: 10px 25px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
         }
-
-        .btn-cadastrar:hover {
-            background-color: rgb(10, 113, 197);
+        .btn:hover {
+            background: #6d1bbd;
         }
-
-        .btn-nav {
-            position: absolute;
-            top: 20px;
-            background-color: #555;
-            border: none;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .btn-voltar {
-            left: 20px;
-        }
-
-        .btn-home {
-            right: 20px;
-        }
-
-        .btn-nav img {
-            height: 20px;
+        .erro {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="/podcasts" class="btn-nav btn-voltar" title="Voltar">
-            <img src="/static/img/return-arrow.png" alt="Voltar">
-        </a>
-        <a href="/" class="btn-nav btn-home" title="Home">
-            <img src="/static/img/home button.png" alt="Home">
-        </a>
-
-        <h2>Cadastrar Podcast</h2>
+        <h2>Novo Podcast</h2>
+        % if erro:
+            <div class="erro">{{erro}}</div>
+        % end
         <form method="post">
             <label for="titulo">Título:</label>
-            <input type="text" name="titulo" id="titulo" required>
+            <input type="text" id="titulo" name="titulo" required>
 
             <label for="apresentador">Apresentador:</label>
-            <input type="text" name="apresentador" id="apresentador" required>
+            <input type="text" id="apresentador" name="apresentador" required>
 
-            <label for="episodios">Nº de episódios:</label>
-            <input type="number" name="episodios" id="episodios" required>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
-            <label for="duracao">Duração total (ex: 10:00):</label>
-            <input type="text" name="duracao" id="duracao" required>
-
-            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+            <button class="btn" type="submit">Cadastrar Podcast</button>
         </form>
+        <a href="/podcasts" style="color:#8a2be2;display:block;text-align:center;margin-top:20px;">Voltar para Podcasts</a>
     </div>
 </body>
 </html>

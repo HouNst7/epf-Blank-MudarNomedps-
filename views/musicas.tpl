@@ -203,6 +203,18 @@
             height: 25px;
             margin-left: 3px;
         }
+
+        .btn {
+            display: block;
+            margin-bottom: 15px;
+            background: #8a2be2;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -243,6 +255,9 @@
         <!-- Barra lateral -->
         <div class="sidebar">
             <h3>Suas músicas</h3>
+            % if usuario and usuario['tipo'] == 'admin':
+                <a href="/musicas/cadastrar" class="btn" style="display:block;margin-bottom:15px;background:#8a2be2;color:white;text-align:center;padding:8px 0;border-radius:20px;font-weight:bold;text-decoration:none;">Cadastrar Música</a>
+            % end
             <div class="section">
                 <h4>
                     % if usuario:

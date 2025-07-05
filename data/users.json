@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "nome": "Nicolai Bukvar",
-        "email": "teste123@gmail.com",
-        "senha": "teste123",
-        "tipo": "admin",
-        "icone": "/static/img/usuarios/1.png"
-    },
-    {
         "id": 2,
         "nome": "Vivicius",
         "email": "vivicius123@gmail.com",
@@ -62,5 +54,12 @@
         "email": "playlist88@gmail.com",
         "senha": "1234",
         "tipo": "regular"
+    },
+    {
+        "id": 10,
+        "nome": "Nicolai Bukvar",
+        "email": "teste123@gmail.com",
+        "senha": "teste123",
+        "tipo": "admin"
     }
 ]

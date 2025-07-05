@@ -17,9 +17,18 @@ def salvar_usuarios(lista):
         json.dump([u.to_dict() for u in lista], f, indent=4)
 
 def encontrar_por_email(email):
-    for u in carregar_usuarios():
-        if u.email == email:
-            return u
+    # Busca no arquivo users.json (padrão do sistema)
+    if not os.path.exists(USERS_FILE):
+        return None
+    with open(USERS_FILE, 'r', encoding='utf-8') as f:
+        try:
+            users = json.load(f)
+            for user in users:
+                if user['email'] == email:
+                    from models.usuarios import Usuario
+                    return Usuario.from_dict(user)
+        except Exception:
+            return None
     return None
 
 def load_users():
