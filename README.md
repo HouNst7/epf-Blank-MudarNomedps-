@@ -1,12 +1,12 @@
-# Projeto Template: POO com Python + Bottle + JSON
+# Projeto de um site de músicas: POO com Python + Bottle + JSON
 
-Este é um projeto de template educacional voltado para o ensino de **Programação Orientada a Objetos (POO)** do Prof. Lucas Boaventura, Universidade de Brasília (UnB).
+Este é um projeto feito à partir do template educacional voltado para o ensino de **Programação Orientada a Objetos (POO)** do Prof. Lucas Boaventura, Universidade de Brasília (UnB).
 
 Utiliza o microframework **Bottle**. Ideal para uso em disciplinas introdutórias de Engenharia de Software ou Ciência da Computação.
 
 ## 💡 Objetivo
 
-Fornecer uma base simples, extensível e didática para construção de aplicações web orientadas a objetos com aplicações WEB em Python, ideal para trabalhos finais ou exercícios práticos.
+Criar um site de músicas inspirado no Spotify usando a linguagem de programação Python e o Framework Bottles.
 
 ---
 
@@ -100,6 +100,8 @@ Para adicionar novos modelos (ex: Atividades):
 
 ---
 
-## 🧠 Autor e Licença
-Projeto desenvolvido como template didático para disciplinas de Programação Orientada a Objetos, baseado no [BMVC](https://github.com/hgmachine/bmvc_start_from_this).
+## 🧠 Autores e Licença
+Projeto desenvolvido pelos alunos- Elias Gomes Sobrinho (241011706) 
+                                   Nicolai Bukvar Miketen (241025345)
+                                   
 Você pode reutilizar, modificar e compartilhar livremente.
