@@ -1,0 +1,11 @@
+# Arquivos removidos por não serem utilizados nas rotas/views do sistema principal:
+# - cadastrar_musica.tpl: não referenciado em nenhuma rota ou template principal.
+# - nova_musica.tpl: não referenciado em nenhuma rota ou template principal.
+# - novo_podcast.tpl: não referenciado em nenhuma rota ou template principal.
+# - register.tpl: não utilizado, cadastro é feito por cadastro.tpl.
+# - helper-final.tpl: arquivo de guia/exemplo, não faz parte do fluxo do app.
+# - user_form.tpl: exemplo do template original, não usado no fluxo real.
+# - users.tpl: exemplo do template original, não usado no fluxo real.
+# - layout.tpl: pode ser removido se não houver uso de rebase nos templates ativos.
+#
+# Caso algum desses arquivos seja necessário no futuro, pode restaurar do controle de versão ou backup.

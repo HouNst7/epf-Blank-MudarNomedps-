@@ -1,8 +1,66 @@
 [
     {
-        "id": 1,
-        "name": "UsuÃ¡rio Teste",
-        "email": "uduarioteste@email.com",
-        "birthdate": "1999-10-21"
+        "id": 2,
+        "nome": "Vivicius",
+        "email": "vivicius123@gmail.com",
+        "senha": "vivicius",
+        "tipo": "regular"
+    },
+    {
+        "id": 3,
+        "nome": "Elias",
+        "email": "eliasteste@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 4,
+        "nome": "EliasADM",
+        "email": "eliasteste2@gmail.com",
+        "senha": "1234",
+        "tipo": "admin",
+        "icone": "/static/img/usuarios/4.png"
+    },
+    {
+        "id": 5,
+        "nome": "playlist1",
+        "email": "teste@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 6,
+        "nome": "playlist2",
+        "email": "testeteste2@gmail.com",
+        "senha": "324324234",
+        "tipo": "regular"
+    },
+    {
+        "id": 7,
+        "nome": "23213434",
+        "email": "teste111@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 8,
+        "nome": "teste77",
+        "email": "teste77@gmail.com",
+        "senha": "12345",
+        "tipo": "regular"
+    },
+    {
+        "id": 9,
+        "nome": "playlist88",
+        "email": "playlist88@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 10,
+        "nome": "Nicolai Bukvar",
+        "email": "teste123@gmail.com",
+        "senha": "teste123",
+        "tipo": "admin"
     }
 ]
