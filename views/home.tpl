@@ -21,7 +21,7 @@
 
         {* logo do site *}
         .logo {
-            height: 40px;
+            height: 60px;
         }
 
         {* área de cima que conteḿ barra de pesquisa e botões *}
@@ -120,6 +120,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .modulo-autenticacao img {
+            width: 50px;
+            height: 50px;
         }
 
         {* letra da mensagem de "olá, usuário" *}

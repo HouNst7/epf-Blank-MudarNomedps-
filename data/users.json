@@ -18,7 +18,8 @@
         "nome": "EliasADM",
         "email": "eliasteste2@gmail.com",
         "senha": "1234",
-        "tipo": "admin"
+        "tipo": "admin",
+        "icone": "/static/img/usuarios/4.png"
     },
     {
         "id": 5,

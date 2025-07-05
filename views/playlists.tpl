@@ -21,7 +21,7 @@
 
         {* logo do site *}
         .logo {
-            height: 40px;
+            height: 60px;
         }
 
         {* área de cima que conteḿ barra de pesquisa e botões *}
