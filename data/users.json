@@ -26,5 +26,40 @@
         "email": "eliasteste2@gmail.com",
         "senha": "1234",
         "tipo": "admin"
+    },
+    {
+        "id": 5,
+        "nome": "playlist1",
+        "email": "teste@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 6,
+        "nome": "playlist2",
+        "email": "testeteste2@gmail.com",
+        "senha": "324324234",
+        "tipo": "regular"
+    },
+    {
+        "id": 7,
+        "nome": "23213434",
+        "email": "teste111@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
+    },
+    {
+        "id": 8,
+        "nome": "teste77",
+        "email": "teste77@gmail.com",
+        "senha": "12345",
+        "tipo": "regular"
+    },
+    {
+        "id": 9,
+        "nome": "playlist88",
+        "email": "playlist88@gmail.com",
+        "senha": "1234",
+        "tipo": "regular"
     }
 ]
