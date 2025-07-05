@@ -30,3 +30,7 @@ def load_users():
             return json.load(f)
         except Exception:
             return []
+
+def save_users(users):
+    with open(USERS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(users, f, ensure_ascii=False, indent=4)

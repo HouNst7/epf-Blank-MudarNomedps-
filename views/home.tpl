@@ -223,6 +223,21 @@
             height: 25px;
             margin-left: 3px;
         }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -245,11 +260,18 @@
         <!-- Autenticação -->
         <div class="modulo-autenticacao">
             % if usuario:
-                <span>Olá, {{usuario['nome']}}!</span>
-                <a class="btn-sair" href="/logout">Sair</a>
+                <div>
+                    <a href="/perfil" style="color:white;text-decoration:none;font-weight:bold;">
+                        <span>Olá, {{usuario['nome']}}!</span>
+                        % if usuario.get('icone'):
+                            <img src="{{usuario['icone']}}" alt="Ícone" width="32" height="32" style="vertical-align:middle;border-radius:50%;margin-left:8px;">
+                        % end
+                    </a>
+                    <a href="/logout" class="btn-sair">Sair</a>
+                </div>
             % else:
-                <a class="btn-cadastro" href="/cadastro">Cadastro</a>
-                <a class="btn-login" href="/login">Login</a>
+                <a href="/login" class="btn">Entrar</a>
+                <a href="/cadastro" class="btn">Cadastrar</a>
             % end
         </div>
     </header>

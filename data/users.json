@@ -4,7 +4,8 @@
         "nome": "Nicolai Bukvar",
         "email": "teste123@gmail.com",
         "senha": "teste123",
-        "tipo": "admin"
+        "tipo": "admin",
+        "icone": "/static/img/usuarios/1.png"
     },
     {
         "id": 2,

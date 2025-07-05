@@ -310,6 +310,11 @@
                             por {{playlist.usuario_nome or 'desconhecido'}}
                         </div>
                         <a href="/playlists/{{playlist.id}}/adicionar" class="section-link">Adicionar música</a>
+                        % if usuario and (playlist.usuario_id == usuario['id'] or usuario['tipo'] == 'admin'):
+                        <form action="/playlists/{{playlist.id}}/excluir" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta playlist?');">
+                            <button type="submit" style="background:#8b0000;color:white;border:none;padding:4px 10px;border-radius:8px;cursor:pointer;">Excluir</button>
+                        </form>
+                        % end
                     </li>
                     % end
                 </ul>

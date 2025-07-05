@@ -1,7 +1,7 @@
 from bottle import default_app, route, run, template, request, redirect, response, TEMPLATE_PATH
 import os
 import json
-from services.playlists_service import get_playlists_by_user, add_playlist, get_playlist_by_id, save_playlists, load_playlists
+from services.playlists_service import get_playlists_by_user, add_playlist, get_playlist_by_id, save_playlists, load_playlists, delete_playlist
 from models.playlist import Playlist
 from services.usuarios_service import load_users
 from services.musicas_service import load_musicas, add_musica, get_musica_by_id
@@ -28,13 +28,14 @@ def save_users(users):
         json.dump(users, f, ensure_ascii=False, indent=4)
 
 def get_usuario_logado():
+    from models.usuarios import Usuario
     usuario_email = request.get_cookie('usuario_email')
     if not usuario_email:
         return None
     users = load_users()
     for user in users:
         if user['email'] == usuario_email:
-            return user
+            return Usuario.from_dict(user)
     return None
 
 @route('/')
@@ -56,12 +57,13 @@ def home():
         resultados_podcasts = [p for p in podcasts if q_lower in p.titulo.lower() or q_lower in p.apresentador.lower()]
     if usuario:
         todas = load_playlists()
-        playlists_usuario = [p for p in todas if p.usuario_id == usuario['id']]
-        playlists_publicas = [p for p in todas if p.publica and p.usuario_id != usuario['id']]
+        playlists_usuario = [p for p in todas if p.usuario_id == usuario.id]
+        playlists_publicas = [p for p in todas if p.publica and p.usuario_id != usuario.id]
     else:
         playlists_publicas = [p for p in load_playlists() if p.publica]
         playlists = playlists
-    return template('home', usuario=usuario, playlists_usuario=playlists_usuario, playlists_publicas=playlists_publicas, q=q, resultados_musicas=resultados_musicas, resultados_podcasts=resultados_podcasts, musicas = musicas, playlists=playlists)
+    # Passa usuario como dict para o template
+    return template('home', usuario=usuario.to_dict() if usuario else None, playlists_usuario=playlists_usuario, playlists_publicas=playlists_publicas, q=q, resultados_musicas=resultados_musicas, resultados_podcasts=resultados_podcasts, musicas = musicas, playlists=playlists)
 
 @route('/login', method=['GET', 'POST'])
 def login():
@@ -113,8 +115,8 @@ def listar_playlists():
     # Adiciona o nome do criador em cada playlist
     for p in todas:
         p.usuario_nome = users_dict.get(p.usuario_id, 'desconhecido')
-    playlists = [p for p in todas if p.publica or p.usuario_id == usuario['id']]
-    return template('playlists', playlists=playlists, usuario=usuario, musicas=musicas)
+    playlists = [p for p in todas if p.publica or p.usuario_id == usuario.id]
+    return template('playlists', playlists=playlists, usuario=usuario.to_dict(), musicas=musicas)
 
 @route('/playlists/nova', method=['GET', 'POST'])
 def criar_playlist():
@@ -254,6 +256,20 @@ def tocar_playlist(playlist_id):
                 itens.append({'tipo': 'podcast', 'obj': p})
     usuario = get_usuario_logado()
     return template('tocar_playlist', playlist=playlist, itens=itens, usuario=usuario)
+
+@route('/playlists/<playlist_id:int>/excluir', method=['POST'])
+def excluir_playlist(playlist_id):
+    usuario = get_usuario_logado()
+    if not usuario:
+        return redirect('/login')
+    playlist = get_playlist_by_id(playlist_id)
+    if not playlist:
+        return template('erro', mensagem='Playlist não encontrada.')
+    # Só permite excluir se for dono ou admin
+    if playlist.usuario_id != usuario['id'] and usuario['tipo'] != 'admin':
+        return template('erro', mensagem='Você não tem permissão para excluir esta playlist.')
+    delete_playlist(playlist_id, usuario_id=None if usuario['tipo']=='admin' else usuario['id'])
+    return redirect('/playlists')
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
