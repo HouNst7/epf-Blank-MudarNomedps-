@@ -37,3 +37,17 @@ def get_playlist_by_id(playlist_id):
 # Lista todas as playlists de um usuário
 def get_playlists_by_user(usuario_id):
     return [p for p in load_playlists() if p.usuario_id == usuario_id]
+
+# Remove uma playlist pelo id, verificando se o usuário é o dono (ou admin, se necessário)
+def delete_playlist(playlist_id, usuario_id=None):
+    playlists = load_playlists()
+    # Só permite deletar se for dono ou admin (se usuario_id for passado)
+    new_playlists = []
+    for p in playlists:
+        if p.id == playlist_id:
+            if usuario_id is not None and p.usuario_id != usuario_id:
+                new_playlists.append(p)  # Não é dono, não deleta
+            # Se for dono, não adiciona (deleta)
+        else:
+            new_playlists.append(p)
+    save_playlists(new_playlists)
