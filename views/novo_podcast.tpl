@@ -45,6 +45,7 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
+            font-size: 16px;
         }
         .btn:hover {
             background: #6d1bbd;
@@ -69,11 +70,18 @@
             <label for="apresentador">Apresentador:</label>
             <input type="text" id="apresentador" name="apresentador" required>
 
+            <label for="episodios">Episódios:</label>
+            <input type="text" id="episodios" name="episodios" required>
+
+            <label for="duracao">Duração:</label>
+            <input type="text" id="duracao" name="duracao" placeholder="Ex: 12:30" required>
+
             <label for="descricao">Descrição:</label>
             <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
             <button class="btn" type="submit">Cadastrar Podcast</button>
         </form>
+
         <a href="/podcasts" style="color:#8a2be2;display:block;text-align:center;margin-top:20px;">Voltar para Podcasts</a>
     </div>
 </body>
