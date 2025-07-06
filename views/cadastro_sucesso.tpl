@@ -29,7 +29,7 @@
         }
 
         .btn-login {
-            background-color: #1e90ff;
+            background: #8a2be2;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -42,7 +42,7 @@
         }
 
         .btn-login:hover {
-            background-color: rgb(10, 113, 197);
+            background:rgb(130, 30, 224);
         }
     </style>
 </head>

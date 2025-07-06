@@ -47,7 +47,7 @@
         }
 
         .btn-adicionar {
-            background-color: #1e90ff;
+            background: #8a2be2;
             margin-top: 30px;
             color: white;
             padding: 10px 20px;
@@ -59,7 +59,7 @@
         }
 
         .btn-adicionar:hover {
-            background-color:rgb(10, 113, 197);
+            background:rgb(130, 30, 224);
         }
 
         .btn-voltar {

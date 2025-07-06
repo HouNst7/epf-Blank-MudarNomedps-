@@ -151,7 +151,7 @@
         }
 
         .btn-cadastro {
-            background-color: #4caf50;
+            background: #8a2be2;
             color: black;
             padding: 8px 16px;
             border-radius: 20px;

@@ -50,7 +50,7 @@
         .cadastro-container input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50;
+            background: #8a2be2;
             color: white;
             border: none;
             border-radius: 25px;
