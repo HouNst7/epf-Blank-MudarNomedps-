@@ -127,7 +127,7 @@ def criar_playlist():
     if request.method == 'POST':
         nome = request.forms.get('nome')
         publica = request.forms.get('publica') == 'on'
-        usuario_id = usuario['id']
+        usuario_id = usuario.id  # Usa o ID do usuário logado
         if not nome:
             erro = 'O nome da playlist é obrigatório.'
         else:

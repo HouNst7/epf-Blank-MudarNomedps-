@@ -1,1 +1,21 @@
-[]
+[
+    {
+        "id": 1,
+        "nome": "Country Gama",
+        "usuario_id": 11,
+        "itens": [
+            {
+                "tipo": "musica",
+                "id": 10
+            }
+        ],
+        "publica": true
+    },
+    {
+        "id": 2,
+        "nome": "Country Gama2",
+        "usuario_id": 11,
+        "itens": [],
+        "publica": true
+    }
+]
