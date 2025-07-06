@@ -148,7 +148,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-4. Accese sua aplicação no navegador em: [http://localhost:8080](http://localhost:8080)
+4. Acesse sua aplicação no navegador em: [http://localhost:8080](http://localhost:8080)
 
 ## 🙋‍♂️ Membros
 
