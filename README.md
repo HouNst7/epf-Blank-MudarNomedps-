@@ -20,31 +20,31 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 ### Página Inicial
 
 <p>
-  <img src="/static/img/screenshots/home print.png" alt="Pagina Home" title="Pagina Home" width="90%" />
+  <img src="/static/img/screenshots/home print.png" alt="Pagina Home" title="Pagina Home" width="100%" />
 </p>
 
 ### Página de Playlists
 
 <p>
-  <img src="/static/img/screenshots/playlist print.png" alt="Pagina Playlists" title="Pagina Playlists" width="90%" />
+  <img src="/static/img/screenshots/playlist print.png" alt="Pagina Playlists" title="Pagina Playlists" width="100%" />
 </p>
 
 ### Página da Música
 
 <p>
-  <img src="/static/img/screenshots/pagina da musica print.png" alt="Pagina Musica" title="Pagina Musica" width="90%" />
+  <img src="/static/img/screenshots/pagina da musica print.png" alt="Pagina Musica" title="Pagina Musica" width="100%" />
 </p>
 
 ### Página de Perfil
 
 <p>
-  <img src="/static/img/screenshots/pagina perfil print.png" alt="Pagina Perfil" title="Pagina Perfil" width="90%" />
+  <img src="/static/img/screenshots/pagina perfil print.png" alt="Pagina Perfil" title="Pagina Perfil" width="100%" />
 </p>
 
 ## 📂 Estrutura do Projeto
 
 └── epf-gamafy/  
-    ├── README.md              # Características do Projeto e Instruções  
+    ├── README.md                        # Características do Projeto e Instruções  
     ├── app.py  
     ├── config.py  
     ├── main.py  
@@ -57,7 +57,7 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
     │   ├── musicas_controller.py  
     │   ├── podcasts_controller.py  
     │   └── usuarios_controller.py  
-    ├── data/  
+    ├── data/                            # Dados utilizados no projeto  
     │   ├── musicas.json  
     │   ├── playlists.json  
     │   ├── podcasts.json  
@@ -81,10 +81,10 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
     │   └── js/  
     │       ├── helper.js  
     │       └── main.js  
-    │   ├── img/  
+    │   ├── img/                        # Imagens utilizadas no projeto    
     │   │   ├── screenshots/  
     │   │   └── usuarios/  
-    └── views/
+    └── views/                          # Templates das Páginas                  
         ├── _comentario_remocoes.txt  
         ├── adicionar_musica.tpl  
         ├── cadastrar_musica.tpl  
@@ -107,6 +107,12 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
         ├── tocar_musica.tpl  
         ├── tocar_playlist.tpl  
         └── ver_playlist.tpl  
+        
+## 📋 Diagrama de Classes
+
+<p>
+  <img src="/static/img/screenshots/Diagrama de Classes.jpeg" alt="Diagrama Classes" title="Diagrama Classes" width="40%" />
+</p>
 
 ## 🌐 Tecnologias Utilizadas
 
@@ -155,7 +161,7 @@ python main.py
     <td align="center">
       <a href="https://github.com/HouNst7">
         <img src="https://github.com/HouNst7.png" width="100px;" alt="Elias Sobrinho"/>
-        <br /><sub><b>Elias Sobrinho</b></sub>
+        <br /><sub><b>Elias Gomes Sobrinho</b></sub>
       </a>
       <br /><span>Frontend</span>
     </td>
