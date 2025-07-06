@@ -8,16 +8,9 @@
     },
     {
         "id": 2,
-<<<<<<< HEAD
         "titulo": "A historia de Ruk!",
         "duracao": "24:20",
         "apresentador": "Ruk99",
         "episodios": 3
-=======
-        "titulo": "Podcast teste",
-        "duracao": "12:30",
-        "apresentador": "Vivi",
-        "episodios": 5
->>>>>>> 1801a3c4ffd8949c57901a3a8e403a65e9f98142
     }
 ]
