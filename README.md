@@ -43,48 +43,43 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 
 ## 📂 Estrutura do Projeto
 
-└── epf-gamafy/  
-    ├── README.md                        # Características do Projeto e Instruções  
-    ├── app.py  
-    ├── config.py  
-    ├── main.py  
+└──epf-gamafy/  
+    ├── README.md # Este arquivo  
+    ├── app.py # Ponto de entrada do sistema  
+    ├── config.py # Configurações e caminhos do projeto  
+    ├── main.py # Inicialização da aplicação  
     ├── Makefile  
-    ├── requirements.txt  
+    ├── requirements.txt # Dependências do projeto  
     ├── .pylintrc  
-    ├── controllers/  
+    ├── controllers/ # Controladores e rotas  
     │   ├── __init__.py  
-    │   ├── base_controller.py  
     │   ├── musicas_controller.py  
     │   ├── podcasts_controller.py  
     │   └── usuarios_controller.py  
-    ├── data/                            # Dados utilizados no projeto  
+    ├── data/ # Arquivos JSON de dados  
     │   ├── musicas.json  
     │   ├── playlists.json  
     │   ├── podcasts.json  
     │   └── users.json  
-    ├── models/  
+    ├── models/ # Definição das entidades (ex: usuarios)  
     │   ├── midia.py  
     │   ├── musica.py  
     │   ├── playlist.py  
     │   ├── podcast.py  
-    │   ├── user.py  
     │   └── usuarios.py  
-    ├── services/  
+    ├── services/ # Lógica de persistência (JSON)  
     │   ├── musicas_service.py  
     │   ├── playlists_service.py  
     │   ├── podcasts_service.py  
     │   └── usuarios_service.py  
-    ├── static/  
+    ├── static/ # CSS, JS e imagens  
     │   ├── css/  
     │   │   ├── helper.css  
     │   │   └── style.css  
     │   └── js/  
     │       ├── helper.js  
     │       └── main.js  
-    │   ├── img/                        # Imagens utilizadas no projeto    
-    │   │   ├── screenshots/  
-    │   │   └── usuarios/  
-    └── views/                          # Templates das Páginas                  
+    └── views/ # Arquivos HTML (Bottle Templating)  
         ├── _comentario_remocoes.txt  
         ├── adicionar_musica.tpl  
         ├── cadastrar_musica.tpl  
@@ -107,6 +102,7 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
         ├── tocar_musica.tpl  
         ├── tocar_playlist.tpl  
         └── ver_playlist.tpl  
+
         
 ## 📋 Diagrama de Classes
 
