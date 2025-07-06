@@ -176,13 +176,26 @@
             font-size: 12px;
             color: #aaa;
         }
+
+        .play-btn img.pause-style {
+            filter: brightness(1.2);
+            margin-right: 7px;
+        }
+
     </style>
     <script>
-        function togglePlay(btn) {
-            const img = btn.querySelector('img');
-            const isPlaying = img.getAttribute('src') === '/static/img/pause button.png';
-            img.setAttribute('src', isPlaying ? '/static/img/play-button-arrowhead.png' : '/static/img/pause button.png');
-        }
+            function togglePlay(btn) {
+                const img = btn.querySelector('img');
+                const isPause = img.getAttribute('src') === '/static/img/pause button.png';
+
+                if (isPause) {
+                    img.setAttribute('src', '/static/img/play-button-arrowhead.png');
+                    img.classList.remove('pause-style');
+                } else {
+                    img.setAttribute('src', '/static/img/pause button.png');
+                    img.classList.add('pause-style');
+                }
+            }
     </script>
 </head>
 <body>
