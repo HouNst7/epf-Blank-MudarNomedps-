@@ -3,7 +3,7 @@
 <head>
     <title>Novo Podcast</title>
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
@@ -46,8 +46,9 @@
             padding: 10px 25px;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
+            width: 80%;
             font-size: 16px;
+            margin-left: 43px;
         }
         .btn:hover {
             background: #6d1bbd;
@@ -91,7 +92,7 @@
         .btn-home img {
             height: 22px;
             width: 22px;
-            margin-right: -2px;
+            margin-right: 0px;
             margin-bottom: 2px;
         }
     </style>

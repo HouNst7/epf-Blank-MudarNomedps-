@@ -21,7 +21,7 @@
 
         {* logo do site *}
         .logo {
-            height: 60px;
+            height: 45px;
         }
 
         {* área de cima que conteḿ barra de pesquisa e botões *}
@@ -301,7 +301,7 @@
     <header>
         <!-- Logo -->
         <a href="/">
-            <img class="logo" src="/static/img/BottleLogo.png" alt="Logo">
+            <img class="logo" src="/static/img/logo_gamafy.png" alt="Logo">
         </a>
 
         <!-- Pesquisa -->
