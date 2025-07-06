@@ -2,8 +2,7 @@ import os
 import json
 from models.musica import Musica
 
-MUSICAS_FILE = os.path.join(os.path.dirname(__file__), '../data/musicas.json')
-
+MUSICAS_FILE = os.path.join(os.path.dirname(__file__), '../data/musicas.json') 
 def load_musicas():
     if not os.path.exists(MUSICAS_FILE):
         return []

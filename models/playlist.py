@@ -3,7 +3,7 @@ class Playlist:
         self.id = id
         self.nome = nome
         self.usuario_id = usuario_id  # id do usuário dono da playlist
-        self.itens = itens or []  # lista de dicts: {'tipo': 'musica'/'podcast', 'id': id}
+        self.itens = itens or []  # lista de dicts: {tipo: musica/podcast}
         self.publica = publica
 
     def adicionar_item(self, tipo, item_id):

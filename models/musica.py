@@ -1,4 +1,4 @@
-from .midia import Midia
+from .midia import Midia #Herdando de Midia
 
 class Musica(Midia):
     def __init__(self, id, titulo, artista, album, duracao, genero=None, icone=None):

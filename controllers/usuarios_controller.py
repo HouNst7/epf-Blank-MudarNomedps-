@@ -6,12 +6,12 @@ import os
 @route('/cadastro', method=['GET', 'POST'])
 def cadastro():
     erro = None
-    if request.method == 'POST':
+    if request.method == 'POST': #checa se foi enviado o Formulario para ser preenchido
         nome = request.forms.get('nome')
         email = request.forms.get('email')
         senha = request.forms.get('senha')
         tipo = request.forms.get('tipo') or 'regular'
-        users = load_users()
+        users = load_users() #usa o service load_users para salvar usuarios
         if any(u['email'] == email for u in users):
             erro = "Usuário já existe!"
             return template('cadastro', erro=erro)
@@ -48,16 +48,16 @@ def home():
 @route('/perfil', method=['GET', 'POST'])
 def editar_perfil():
     from app import get_usuario_logado
-    usuario = get_usuario_logado()
+    usuario = get_usuario_logado() #Utiliza usuário logado (cookie)
     if not usuario:
         return redirect('/login')
     erro = None
     if request.method == 'POST':
         nome = request.forms.get('nome')
         senha = request.forms.get('senha')
-        tipo = usuario.tipo  # Não permite troca de tipo para regular
+        tipo = usuario.tipo  #mantém o mesmo tipo de usuário
         if usuario.tipo == 'admin':
-            tipo = request.forms.get('tipo') or 'admin'
+            tipo = request.forms.get('tipo') or 'admin' #Se for admin, pode mudar o tipo
         icone = usuario.icone
         upload = request.files.get('icone')
         if upload and upload.filename:
@@ -79,20 +79,20 @@ def editar_perfil():
                         u['tipo'] = tipo
             save_users(users)
             return redirect('/perfil')
-    return template('perfil', usuario=usuario.to_dict(), erro=erro)
+    return template('perfil', usuario=usuario.to_dict(), erro=erro)     #Renderiza a página de edição com os dados atuais ou erro
 
 @route('/perfil/excluir', method=['POST'])
 def excluir_perfil():
     from app import get_usuario_logado
     usuario = get_usuario_logado()
     if not usuario:
-        return redirect('/login')
+        return redirect('/login') # Redireciona se não estiver logado
     users = load_users()
-    users = [u for u in users if u['email'] != usuario.email]
-    save_users(users)
+    users = [u for u in users if u['email'] != usuario.email]  #Remove o usuário da lista
+    save_users(users)  #Salva a lista sem o usuário
     response.delete_cookie('usuario_email')
     return redirect('/')
 
-@route('/static/img/usuarios/<filename:path>')
+@route('/static/img/usuarios/<filename:path>') #Rota para lancar as imagens de perfil dos usuários
 def user_icon(filename):
     return static_file(filename, root='static/img/usuarios')

@@ -11,15 +11,12 @@
             {
                 "tipo": "musica",
                 "id": 14
+            },
+            {
+                "tipo": "musica",
+                "id": 32
             }
         ],
-        "publica": true
-    },
-    {
-        "id": 2,
-        "nome": "Country Gama2",
-        "usuario_id": 11,
-        "itens": [],
         "publica": true
     },
     {

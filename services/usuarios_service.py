@@ -2,15 +2,15 @@ import json
 import os
 from models.usuarios import Usuario
 
-CAMINHO = 'data/usuarios.json'
-USERS_FILE = os.path.join(os.path.dirname(__file__), '../data/users.json')
+CAMINHO = 'data/usuarios.json' #Caminho padrão para o arquivo de usuários usado pelo método salvar_usuarios/carregar_usuarios
+USERS_FILE = os.path.join(os.path.dirname(__file__), '../data/users.json') #Caminho alternativo usado pelos métodos load_users caso o padrao nao funcione
 
 def carregar_usuarios():
     if not os.path.exists(CAMINHO):
-        return []
+        return []   # Retorna lista vazia se o arquivo não existir
     with open(CAMINHO, 'r') as f:
         dados = json.load(f)
-        return [Usuario.from_dict(d) for d in dados]
+        return [Usuario.from_dict(d) for d in dados]  #Reconstrói os objetos Usuario
 
 def salvar_usuarios(lista):
     with open(CAMINHO, 'w') as f:
@@ -36,10 +36,10 @@ def load_users():
         return []
     with open(USERS_FILE, 'r', encoding='utf-8') as f:
         try:
-            return json.load(f)
+            return json.load(f) #Retorna a lista de dicionários
         except Exception:
             return []
 
-def save_users(users):
+def save_users(users): #Salva uma lista de usuários no arquivo USERS_FILE
     with open(USERS_FILE, 'w', encoding='utf-8') as f:
         json.dump(users, f, ensure_ascii=False, indent=4)

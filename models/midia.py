@@ -1,4 +1,4 @@
-class Midia:
+class Midia: #dados de "Midia"
     def __init__(self, id, titulo, duracao):
         self.id = id
         self.titulo = titulo
