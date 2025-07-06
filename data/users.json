@@ -62,5 +62,20 @@
         "email": "teste123@gmail.com",
         "senha": "teste123",
         "tipo": "admin"
+    },
+    {
+        "id": 11,
+        "nome": "TiagoRuk",
+        "email": "tiagoruk@gmail.com",
+        "senha": "tiago123",
+        "tipo": "admin",
+        "icone": "/static/img/usuarios/11.jpg"
+    },
+    {
+        "id": 12,
+        "nome": "tiaguregular",
+        "email": "tiagu123@gmail.com",
+        "senha": "tiagu123",
+        "tipo": "regular"
     }
 ]
