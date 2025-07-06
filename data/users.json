@@ -19,7 +19,7 @@
         "email": "eliasteste2@gmail.com",
         "senha": "1234",
         "tipo": "admin",
-        "icone": "/static/img/usuarios/4.png"
+        "icone": "/static/img/usuarios/4.jpg"
     },
     {
         "id": 5,

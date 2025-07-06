@@ -233,7 +233,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transform: translateX(210%);
+            transform: translateX(160%);
         }
 
         .modulo-perfil img {

@@ -7,6 +7,10 @@
             {
                 "tipo": "musica",
                 "id": 10
+            },
+            {
+                "tipo": "musica",
+                "id": 14
             }
         ],
         "publica": true
@@ -16,6 +20,38 @@
         "nome": "Country Gama2",
         "usuario_id": 11,
         "itens": [],
+        "publica": true
+    },
+    {
+        "id": 3,
+        "nome": "Playlist do Elias",
+        "usuario_id": 4,
+        "itens": [
+            {
+                "tipo": "musica",
+                "id": 4
+            },
+            {
+                "tipo": "musica",
+                "id": 12
+            },
+            {
+                "tipo": "musica",
+                "id": 14
+            },
+            {
+                "tipo": "musica",
+                "id": 7
+            },
+            {
+                "tipo": "musica",
+                "id": 1
+            },
+            {
+                "tipo": "musica",
+                "id": 10
+            }
+        ],
         "publica": true
     }
 ]
