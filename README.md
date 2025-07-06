@@ -14,6 +14,7 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 - Autenticação de Usuário
 - Interface responsiva
 - Permite a adição de Músicas, Playlists e Podcasts
+- Criação e Edição de Perfil
 
 ## 🖼️ Demonstração
 
@@ -43,6 +44,7 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 
 ## 📂 Estrutura do Projeto
 
+```
 └──epf-gamafy/  
     ├── README.md # Este arquivo  
     ├── app.py # Ponto de entrada do sistema  
@@ -101,9 +103,42 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
         ├── register.tpl  
         ├── tocar_musica.tpl  
         ├── tocar_playlist.tpl  
-        └── ver_playlist.tpl  
+        └── ver_playlist.tpl
+```
+---
 
-        
+## 📁 Descrição das Pastas
+
+### `controllers/`
+Contém as classes responsáveis por lidar com as rotas da aplicação. Exemplos:
+- `usuarios_controller.py`: rotas para listagem, adição, edição e remoção de usuários.
+- `musicas_controller`: rotas para cadastro e processamento de músicas
+
+### `models/`
+Define as classes que representam os dados da aplicação. Exemplo:
+- `usuarios.py`: classe `Usuario`, com atributos como `id`, `nome`, `email`, `senha` etc.
+
+### `services/`
+Responsável por salvar, carregar e manipular dados usando arquivos JSON. Exemplo:
+- `playlist.py`: contém métodos como `adicionar_item`, `remover_item`.
+
+### `views/`
+Contém os arquivos `.tpl` utilizados pelo Bottle como páginas HTML:
+- `home.tpl`: página inicial do site.
+- `detalhes_musica.tpl`: é a página de uma música, contém informações como título, autor, álbum e duração.
+- `perfil.tpl`: página para edição de perfil.
+
+### `static/`
+Arquivos estáticos como:
+- `css/style.css`: estilos básicos.
+- `js/main.js`: scripts JS opcionais.
+- `logo_gamafy.png`: logo do site.
+
+### `data/`
+Armazena os arquivos `.json` que simulam o banco de dados:
+- `musicas.json`: onde os dados das músicas são persistidos.
+
+---
 ## 📋 Diagrama de Classes
 
 <p>
@@ -131,19 +166,25 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 
 ## ▶️ Como Executar
 
-1. Crie o ambiente virtual na pasta fora do seu projeto:
+1. Clone o repositório:
+```bash
+git clone https://github.com/HouNst7/epf-Gamafy
+cd epf-Gamafy
+```
+
+2. Crie o ambiente virtual na pasta fora do seu projeto:
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\\Scripts\\activate     # Windows
 ```
 
-2. Entre dentro do seu projeto criado a partir do template e instale as dependências:
+3. Entre dentro do seu projeto criado a partir do template e instale as dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Rode a aplicação:
+4. Rode a aplicação:
 ```bash
 python main.py
 ```
