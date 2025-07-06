@@ -1,68 +1,120 @@
-# Projeto de um site de músicas: POO com Python + Bottle + JSON
 
-Este é um projeto feito à partir do template educacional voltado para o ensino de **Programação Orientada a Objetos (POO)** do Prof. Lucas Boaventura, Universidade de Brasília (UnB).
+# 🎵 Gamafy - Plataforma de Músicas
 
-Utiliza o microframework **Bottle**. Ideal para uso em disciplinas introdutórias de Engenharia de Software ou Ciência da Computação.
+<p align="center">
+  <img src="/static/img/logo_gamafy.png" alt="Logo" title="Gamafy Logo" />
+</p>
 
-## 💡 Objetivo
+## 🔍 Visão Geral
 
-Criar um site de músicas inspirado no Spotify usando a linguagem de programação Python e o Framework Bottles.
+Gamafy é uma plataforma de músicas inspirada no spotify.
+Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre na Universidade de Brasília (UnB) campus FCTE. Projeto realizado como trabalho final da disciplina de "Orientação a Objetos" no curso de "Engenharias".
 
----
+## 📣 Características
 
-## 🗂 Estrutura de Pastas
+- Autenticação de Usuário
+- Interface responsiva
+- Permite a adição de Músicas, Playlists e Podcasts
 
-```bash
-poo-python-bottle-template/
-├── app.py # Ponto de entrada do sistema
-├── config.py # Configurações e caminhos do projeto
-├── main.py # Inicialização da aplicação
-├── requirements.txt # Dependências do projeto
-├── README.md # Este arquivo
-├── controllers/ # Controladores e rotas
-├── models/ # Definição das entidades (ex: User)
-├── services/ # Lógica de persistência (JSON)
-├── views/ # Arquivos HTML (Bottle Templating)
-├── static/ # CSS, JS e imagens
-├── data/ # Arquivos JSON de dados
-└── .vscode/ # Configurações opcionais do VS Code
-```
+## 🖼️ Demonstração
+
+### Página Inicial
+![Pagina Inicial](web_screenshoots/HomePage_NotLogged.png "Pagina Inicial")
+
+### Página de Playlists
+![Página de Playlists](web_screenshoots/WelcomeQuiz.png "Página de Playlists")
+
+### Página da Música
+![Página da Música](web_screenshoots/QuizPage.png "Página de Música")
+
+### Página de Perfil
+![Página de Perfil](web_screenshoots/ProfilePage.png "Página de Perfil")
+
+## 📂 Estrutura do Projeto
+
+└── epf-gamafy/  
+    ├── README.md              # Características do Projeto e Instruções  
+    ├── app.py  
+    ├── config.py  
+    ├── main.py  
+    ├── Makefile  
+    ├── requirements.txt  
+    ├── .pylintrc  
+    ├── controllers/  
+    │   ├── __init__.py  
+    │   ├── base_controller.py  
+    │   ├── musicas_controller.py  
+    │   ├── podcasts_controller.py  
+    │   └── usuarios_controller.py  
+    ├── data/  
+    │   ├── musicas.json  
+    │   ├── playlists.json  
+    │   ├── podcasts.json  
+    │   └── users.json  
+    ├── models/  
+    │   ├── midia.py  
+    │   ├── musica.py  
+    │   ├── playlist.py  
+    │   ├── podcast.py  
+    │   ├── user.py  
+    │   └── usuarios.py  
+    ├── services/  
+    │   ├── musicas_service.py  
+    │   ├── playlists_service.py  
+    │   ├── podcasts_service.py  
+    │   └── usuarios_service.py  
+    ├── static/  
+    │   ├── css/  
+    │   │   ├── helper.css  
+    │   │   └── style.css  
+    │   └── js/  
+    │       ├── helper.js  
+    │       └── main.js  
+    │   ├── img/  
+    │   │   ├── screenshots/  
+    │   │   └── usuarios/  
+    └── views/
+        ├── _comentario_remocoes.txt  
+        ├── adicionar_musica.tpl  
+        ├── cadastrar_musica.tpl  
+        ├── cadastro.tpl  
+        ├── cadastro_sucesso.tpl  
+        ├── detalhes_musica.tpl  
+        ├── detalhes_podcast.tpl  
+        ├── erro.tpl  
+        ├── home.tpl  
+        ├── login.tpl  
+        ├── musicas.tpl  
+        ├── nova_musica.tpl  
+        ├── nova_playlist.tpl  
+        ├── novo_podcast.tpl  
+        ├── ouvir_podcast.tpl  
+        ├── perfil.tpl  
+        ├── playlists.tpl  
+        ├── podcasts.tpl  
+        ├── register.tpl  
+        ├── tocar_musica.tpl  
+        ├── tocar_playlist.tpl  
+        └── ver_playlist.tpl  
+
+## 🌐 Tecnologias Utilizadas
 
 
----
+**Frontend:**
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)  
+- ![Python](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  
 
-## 📁 Descrição das Pastas
 
-### `controllers/`
-Contém as classes responsáveis por lidar com as rotas da aplicação. Exemplos:
-- `user_controller.py`: rotas para listagem, adição, edição e remoção de usuários.
-- `base_controller.py`: classe base com utilitários comuns.
+**Backend:**
+- ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
+- Bottles Framework
 
-### `models/`
-Define as classes que representam os dados da aplicação. Exemplo:
-- `user.py`: classe `User`, com atributos como `id`, `name`, `email`, etc.
 
-### `services/`
-Responsável por salvar, carregar e manipular dados usando arquivos JSON. Exemplo:
-- `user_service.py`: contém métodos como `get_all`, `add_user`, `delete_user`.
+**Outras Ferramentas:**
+- ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)  
+- ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
 
-### `views/`
-Contém os arquivos `.tpl` utilizados pelo Bottle como páginas HTML:
-- `layout.tpl`: estrutura base com navegação e bloco `content`.
-- `users.tpl`: lista os usuários.
-- `user_form.tpl`: formulário para adicionar/editar usuário.
-
-### `static/`
-Arquivos estáticos como:
-- `css/style.css`: estilos básicos.
-- `js/main.js`: scripts JS opcionais.
-- `img/BottleLogo.png`: exemplo de imagem.
-
-### `data/`
-Armazena os arquivos `.json` que simulam o banco de dados:
-- `users.json`: onde os dados dos usuários são persistidos.
-
----
 
 ## ▶️ Como Executar
 
@@ -85,23 +137,30 @@ python main.py
 
 4. Accese sua aplicação no navegador em: [http://localhost:8080](http://localhost:8080)
 
----
+## 🙋‍♂️ Membros
 
-## ✍️ Personalização
-Para adicionar novos modelos (ex: Atividades):
-
-1. Crie a classe no diretório **models/**.
-
-2. Crie o service correspondente para manipulação do JSON.
-
-3. Crie o controller com as rotas.
-
-4. Crie as views .tpl associadas.
-
----
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/HouNst7">
+        <img src="https://github.com/HouNst7.png" width="100px;" alt="Elias Sobrinho"/>
+        <br /><sub><b>Elias Sobrinho</b></sub>
+      </a>
+      <br /><span>Frontend</span>
+    </td>
+    <td align="center">
+      <a href="https://github.com/NBukvar">
+        <img src="https://github.com/NBukvar.png" width="100px;" alt="Nicolai Miketen"/>
+        <br /><sub><b>Nicolai Bukvar Miketen</b></sub>
+      </a>
+      <br /><span>Backend</span>
+    </td>
+  </tr>
+</table>
 
 ## 🧠 Autores e Licença
 Projeto desenvolvido pelos alunos- Elias Gomes Sobrinho (241011706) 
                                    Nicolai Bukvar Miketen (241025345)
                                    
 Você pode reutilizar, modificar e compartilhar livremente.
+
