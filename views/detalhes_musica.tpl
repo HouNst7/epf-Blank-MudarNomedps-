@@ -63,9 +63,16 @@
             cursor: pointer;
         }
 
-        .btn-voltar img,
         .btn-home img {
-            height: 18px;
+            height: 22px;
+            margin-right: -1px;
+            margin-bottom: 1px;
+        }
+
+        .btn-voltar img {
+            height: 28px;
+            margin-right: 2px;
+            margin-bottom: 1px;
         }
 
         {* capa da música *}
