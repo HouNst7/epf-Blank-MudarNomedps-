@@ -68,7 +68,6 @@
             font-weight: bold;
             font-size: 14px;
             margin-top: 70px;
-            
         }
 
         .btn-sair:hover{
@@ -120,7 +119,7 @@
             text-decoration: underline;
         }
 
-        {* mensagem de "olá, usuário" *}
+        {* mensagem de boas vindas *}
         .modulo-autenticacao {
             display: flex;
             align-items: center;
@@ -134,7 +133,7 @@
             height: 50px;
         }
 
-        {* letra da mensagem de "olá, usuário" *}
+        {* span da mensagem de boas vindas *}
         .modulo-autenticacao span {
             font-weight: bold;
             margin-top: -25px;

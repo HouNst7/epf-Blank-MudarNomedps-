@@ -84,7 +84,7 @@
             font-weight: bold;
             font-size: 14px;
             margin-top: -0px;
-            transform: translateX(325%);
+            transform: translateX(375%);
            
         }
 
@@ -92,7 +92,7 @@
             background:rgb(182, 13, 13);
         }
 
-        {* container maior, que contém as músicas *}
+        {* container das músicas *}
         .container {
             display: flex;
             height: calc(100vh - 80px);
@@ -100,7 +100,7 @@
             gap: 20px;
         }
 
-        {* container menor, lado esquerdo *}
+        {* container do lado esquerdo *}
         .sidebar {
             width: 20%;
             background: linear-gradient(to bottom, #2b2b2b, #1e1e1e);
@@ -233,13 +233,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transform: translateX(140%);
+            transform: translateX(210%);
         }
 
         .modulo-perfil img {
             width: 50px;
             height: 50px;
         }
+        
     </style>
 </head>
 <body>
@@ -249,7 +250,7 @@
             <img class="logo" src="/static/img/logo_gamafy.png" alt="Logo">
         </a>
 
-        <!-- Pesquisa + Botão Home -->
+        <!-- Pesquisa e Botões -->
         <div class="search-area">
             <form method="get" class="search-bar">
                 <input type="text" name="q" placeholder="Busca por nome, artista ou álbum" value="{{q or ''}}">

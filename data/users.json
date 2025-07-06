@@ -77,5 +77,13 @@
         "email": "tiagu123@gmail.com",
         "senha": "tiagu123",
         "tipo": "regular"
+    },
+    {
+        "id": 13,
+        "nome": "Elias",
+        "email": "eliasteste3@gmail.com",
+        "senha": "1234",
+        "tipo": "regular",
+        "icone": "/static/img/usuarios/13.jpg"
     }
 ]
