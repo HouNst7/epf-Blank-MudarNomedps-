@@ -1,8 +1,7 @@
-
 # 🎵 Gamafy - Plataforma de Músicas
 
 <p align="center">
-  <img src="/static/img/logo_gamafy.png" alt="Logo" title="Gamafy Logo" />
+  <img src="/static/img/logo_gamafy.png" alt="Logo" title="Gamafy Logo" width="25%" />
 </p>
 
 ## 🔍 Visão Geral
@@ -19,16 +18,28 @@ Este projeto foi desenvolvido por estudantes de Engenharia no terceiro semestre 
 ## 🖼️ Demonstração
 
 ### Página Inicial
-![Pagina Inicial](web_screenshoots/HomePage_NotLogged.png "Pagina Inicial")
+
+<p>
+  <img src="/static/img/screenshots/home print.png" alt="Pagina Home" title="Pagina Home" width="90%" />
+</p>
 
 ### Página de Playlists
-![Página de Playlists](web_screenshoots/WelcomeQuiz.png "Página de Playlists")
+
+<p>
+  <img src="/static/img/screenshots/playlist print.png" alt="Pagina Playlists" title="Pagina Playlists" width="90%" />
+</p>
 
 ### Página da Música
-![Página da Música](web_screenshoots/QuizPage.png "Página de Música")
+
+<p>
+  <img src="/static/img/screenshots/pagina da musica print.png" alt="Pagina Musica" title="Pagina Musica" width="90%" />
+</p>
 
 ### Página de Perfil
-![Página de Perfil](web_screenshoots/ProfilePage.png "Página de Perfil")
+
+<p>
+  <img src="/static/img/screenshots/pagina perfil print.png" alt="Pagina Perfil" title="Pagina Perfil" width="90%" />
+</p>
 
 ## 📂 Estrutura do Projeto
 
@@ -159,8 +170,10 @@ python main.py
 </table>
 
 ## 🧠 Autores e Licença
-Projeto desenvolvido pelos alunos- Elias Gomes Sobrinho (241011706) 
-                                   Nicolai Bukvar Miketen (241025345)
+Projeto desenvolvido pelos alunos:
+
+Elias Gomes Sobrinho; Matrícula 241011706  
+Nicolai Bukvar Miketen; Matrícula 241025345
                                    
 Você pode reutilizar, modificar e compartilhar livremente.
 
