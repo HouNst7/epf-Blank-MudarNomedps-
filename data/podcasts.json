@@ -5,5 +5,12 @@
         "duracao": "15:57",
         "apresentador": "Vinicius",
         "episodios": 6
+    },
+    {
+        "id": 2,
+        "titulo": "A historia de Ruk!",
+        "duracao": "24:20",
+        "apresentador": "Ruk99",
+        "episodios": 3
     }
 ]
