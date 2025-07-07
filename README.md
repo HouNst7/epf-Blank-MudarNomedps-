@@ -169,7 +169,7 @@ Armazena os arquivos `.json` que simulam o banco de dados:
 1. Clone o repositório:
 ```bash
 git clone https://github.com/HouNst7/epf-Gamafy
-cd epf-Gamafy
+cd .\epf-Gamafy\
 ```
 
 2. Crie o ambiente virtual na pasta fora do seu projeto:
